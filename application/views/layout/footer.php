@@ -74,10 +74,14 @@
 		$('input[name=tanggal_selesai_bayar]').val(tgl_lunas);
 
 	});
+	setTimeout(function(){
+		$('.alert').hide();
+	},3000);
 </script>
 
 <script>
 	$(function () {
+
 		$('#datadebitur').DataTable()
 		$('#kalender').fullCalendar()
 	})
