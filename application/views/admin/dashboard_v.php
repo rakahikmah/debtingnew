@@ -5,6 +5,13 @@
       <h1>
         Dashboard
       </h1>
+      <?php if ($this->session->flashdata('informasi')) :
+               ?>
+      <div class="alert alert-success">
+        <i class="icon fa fa-check"></i>
+        <span> Selamat Datang Admin</span>
+      </div>
+    <?php endif; ?>
     </section>
     <!-- Main content -->
     <section class="content container-fluid">

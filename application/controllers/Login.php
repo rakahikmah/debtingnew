@@ -57,6 +57,7 @@ class Login extends CI_Controller {
 							);
 				$this->session->set_userdata($data_session);
 				if ($result['role'] == 'admin') {
+					$this->session->set_flashdata('informasi', 'true');
 					redirect('admin');
 				}else if($result['role'] == 'debitur'){
 					redirect('debitur');
