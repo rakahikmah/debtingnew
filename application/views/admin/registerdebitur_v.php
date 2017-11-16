@@ -67,6 +67,9 @@
                        <span class="text-danger"><?php echo form_error("pekerjaan"); ?></span>
                     </div>
                   </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Perhitungan</div>
+                    <div class="panel-body">
                   <div class="form-group">
                     <label for="nama_barang" class="col-md-2 control-label ">Nama Barang</label>
                     <div class="col-md-4">
@@ -127,7 +130,9 @@
                     <div class="col-md-4">
                       <input type="text" class="form-control" name="tanggal_selesai_bayar"  readonly>
                        <span class="text-danger"><?php echo form_error("tanggal_selesai_bayar"); ?></span>
+                       </div>
                     </div>
+                  </div>
                   </div>
                  <div class="col-sm-2 pull-right">
                     <input type="submit" class="btn btn-primary" name="submit" value="Register">
