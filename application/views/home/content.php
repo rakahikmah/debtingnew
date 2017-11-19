@@ -1,62 +1,47 @@
-<br><br><br>	
-<div class="container">	
-	<div class="jumbotron">
+<div class="container-fluid header-image">	
+	
 	  <div class="container">
 	  	<center>
 	    <h2>Debting</h2>
 	    <h3>The Mage Of Debt</h3>
-	    <a class="btn btn-primary btn-lg" href="#" role="button">Who We Are »</a>
+	    <?php if ($this->session->has_userdata('role')): ?>
+              <?php if ($this->session->userdata('role') =='admin'): ?>
+                <a href="<?=site_url('admin')?>" class="btn btn-primary login-btn"> Login As <?=$this->session->userdata('role')?></a>
+              <?php else: ?>  
+                <a href="<?=site_url('debitur')?>" class="btn btn-primary login-btn">Login As <?=$this->session->userdata('role')?></a>
+              <?php endif; ?>
+            <?php else: ?>
+             <a href="<?=site_url('login')?>" class="btn btn-primary login-btn">Login</a>
+            <?php endif ?>
 	   </center> 
 	  </div>
-	</div>
+</div>
 
-	<hr class="featurette-divider">
-
+<div class="container-fluid about-us">
 	<div class="row featurette">
 	   <div class="col-md-5">
-	      <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzUwMHg1MDAvYXV0bwpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE1Zjc3ZDUyYmEyIHRleHQgeyBmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MjVwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTVmNzdkNTJiYTIiPjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRUVFRUVFIi8+PGc+PHRleHQgeD0iMTg1LjEyNSIgeT0iMjYxLjEiPjUwMHg1MDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true">
+	      <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="https://i.pinimg.com/736x/dd/64/da/dd64da585bc57cb05e5fd4d8ce873f57--library-logo-kids-logo.jpg" data-holder-rendered="true">
 	    </div>
 	     <div class="col-md-7 ">
 	      <h2 class="featurette-heading">About Debting</h2>
-	      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+	      <p class="lead">DEBTING adalah merupakan aplikasi penyedia layanan pembukuan catatan utang piutang berbasis cloud atau website. Dengan adanya aplikasi DEBTING ini Debitur dapat mengetahui jumlah hutang yang harus dibayar kepada kreditur begitu juga kreditur juga dapat mengetahui hutang Debitur (piutang) dengan menggunakan website sehingga tidak perlu lagi pencatatan hutang piutang dengan menggunakan buku
+
+</p>
 	    </div>
 	 </div>
-
-	
-
-	<hr class="featurette-divider">
-
-	<div class="row featurette">
-	    <div class="col-md-7">
-	      <h2 class="featurette-heading">How To Acces This App</h2>
-	      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-	    </div>
-	    <div class="col-md-5">
-	      <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzUwMHg1MDAvYXV0bwpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE1Zjc3ZDUyYmEyIHRleHQgeyBmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MjVwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTVmNzdkNTJiYTIiPjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRUVFRUVFIi8+PGc+PHRleHQgeD0iMTg1LjEyNSIgeT0iMjYxLjEiPjUwMHg1MDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true">
-	    </div>
-	 </div>
-
-	<hr class="featurette-divider">
-
-	<div class="row featurette" align="center">
-	   	<div class="col-md-12">
-	      <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-	      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-	    </div>
-	</div>
-
-	<hr class="featurette-divider">
-
+</div>
+	<div class="footer">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-4">
 	      <h3 align="center">Alamat Kami</h3>
 	      <table class="table">
 	      	<tr>
-	      		<td><h4>Lokasi</h4></td>
+	      		<td><h4>Lokasi: Jalan Mawar No.47</h4></td>
 	      		<td></td>
 	      	</tr>
 	      	<tr>
-	      		<td><h4>No Telepon</h4></td>
+	      		<td><h4>No Telepon: 082233332222</h4></td>
 	      		<td></td>
 	      	</tr>
 	      </table>
@@ -77,5 +62,6 @@
 	   	  </p>
   		</div>
 	</div>
-
+	</div>
+</div>
 </div>

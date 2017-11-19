@@ -129,7 +129,12 @@ class Admin extends CI_Controller {
 		$this->session->set_flashdata('infoedit', 'true');
 		redirect(site_url("admin/datadebitur"));
 	}
-	
+	/*public function test($id_debitur)
+	{
+		$ar=array();
+		$ar=$this->admin_model->fetch_detail_debitur($id_debitur);
+		echo json_encode($ar);	
+	}*/
 }
 
 /* End of file Admin.php */
