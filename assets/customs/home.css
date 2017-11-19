@@ -11,3 +11,23 @@
 .geseraboutkiri{
 	padding-right: 50px;
 }
+.header-image{
+	padding: 221px 0px;
+	background:url(../img/profile/buku.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    color:#1A1927;
+    width: 100%;
+}
+a.login-btn{
+	padding:0 30px;
+	font-size:30px; 
+}
+.about-us{
+	background-color: #1A1927;
+	color: white;
+}
+.footer{
+	background-color: #151618;
+	color: white;
+	background-size: cover;
+}

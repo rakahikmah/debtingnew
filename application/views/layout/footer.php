@@ -100,6 +100,19 @@
 	//     var n2 = n.replace(/\d\d\d(?!$)/g, "$&,");    
 	//     return 'Rp.' +n2.split('').reverse().join('');
 	// }
+
+	/*$('.btn-detail').click(function(){
+    	$('.modal-detail').modal('show');
+    	var id= $(this).val();
+ 		$.ajax({
+	 		url: "<?= base_url('admin/test/') ?>"+id, 
+	 		dataType:'json',
+	 		success: function(data){
+	            $(".modal-detail .modal-body .nama").val(data['nama']);
+	            $(".modal-detail .modal-body .alamat").val(data['alamat']);
+	        }
+    	}); 	
+  	})*/
 </script>
 </body>
 </html>
