@@ -11,6 +11,13 @@ class Tester extends CI_Controller {
         echo date('Y-m-d',strtotime($this->input->post('tanggal_selesai_bayar')));	
 	}
 
+	/*public function test($id_debitur)
+	{
+		$ar=array();
+		$ar=$this->admin_model->fetch_detail_debitur($id_debitur);
+		echo json_encode($ar);	
+	}*/
+
 }
 
 /* End of file Tester.php */
