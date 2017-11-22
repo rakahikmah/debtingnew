@@ -19,7 +19,7 @@
         <div class="box-body" style="">
           <div class="row">
             <div class="col-md-12">
-              <div class="table table-responsive">
+             <!--  <div class="table table-responsive">
                 <div class="col-md-6 col-md-offset-3">
                   <table class="table table-condensed">
                   <tr>
@@ -99,16 +99,131 @@
                   <tr>
                     <td>Tanggal Registrasi</td>
                     <td>:</td>
-                    <td><?=date('d-m-Y',strtotime($fetch_data['tanggal_pendaftaran']))?></td>
+                    <td><?=date('d-m-Y',strtotime($fetch_data['tanggal_daftar']))?></td>
                   </tr>
                   <tr>
                     <td>Tanggal Selesai Pembayaran</td>
                     <td>:</td>
-                    <td><?=date('d-m-Y',strtotime($fetch_data['tanggal_selesai_bayar']))?></td>
+                    <td><?=date('d-m-Y',strtotime($fetch_data['tanggal_selesai']))?></td>
                   </tr>
                 </table>
                 </div>
-              </div>
+              </div> -->
+               <section class="invoice">
+                <div class="row invoice-info">
+                    <div class="col-sm-6 invoice-col">
+                      <table class="table table-striped">
+                        <tr>
+                          <td>ID Debitur</td>
+                          <td><?=$fetch_data['id_debitur']?></td>
+                        </tr>
+                        <tr>
+                          <td>Username</td>
+                          <td><?=$fetch_data['username']?></td>
+                        </tr>
+                        <tr>
+                          <td>Nama Debitur</td>
+                          <td><?=$fetch_data['nama']?></td>
+                        </tr>
+                        <tr>
+                          <td>Pekerjaan</td>
+                          <td><?=$fetch_data['pekerjaan']?></td>
+                        </tr>
+                      </table>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-6 invoice-col">
+                      <table class="table table-striped">
+                        <tr>
+                          <td>NIK</td>
+                          <td><?=$fetch_data['nik']?></td>
+                        </tr>
+                        <tr>
+                          <td>Email</td>
+                          <td><?=$fetch_data['email']?></td>
+                        </tr>
+                        <tr>
+                          <td>No Handphone</td>
+                          <td><?=$fetch_data['no_telp']?></td>
+                        </tr>
+                        <tr>
+                          <td>Alamat</td>
+                          <td><?=$fetch_data['alamat']?></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- /.row -->
+                
+                <div class="row">
+                    <!-- accepted payments column -->
+                    <div class="col-md-6">
+                      <h5 class='text-blue'>Barang Yang DiKreditkan</h5>
+                      <hr />
+                      <div class="table-responsive">
+                        <table class="table table-striped">
+                          <tr>
+                            <td>Nama Barang</td>
+                            <td><?=$fetch_data['nama_barang']?></td>
+                          </tr>
+                         <tr>
+                            <td>Pengambilan Angsuran</td>
+                            <td><?=$fetch_data['jumlah_angsuran']?></td>
+                          </tr>
+                          <tr>
+                            <td>Tipe Pembayaran</td>
+                            <td>
+                              <?php
+                              if ($fetch_data['tipe_pembayaran'] == 7) {
+                                echo "Perminggu";
+                              }else{
+                                echo "Perbulan";
+                              }
+                              ?>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Terdaftar</td>
+                            <td><?=date('d-M-Y',strtotime($fetch_data['tanggal_daftar']))?></td>
+                          </tr>
+                          <tr>
+                            <td>Berakhir</td>
+                            <td><?=date('d-M-Y',strtotime($fetch_data['tanggal_selesai']))?></td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-6">
+                      <h5 class='text-blue'>Perhitungan</h5>
+                      <hr align="left"  class="bg-yellow" />
+                      <div class="table-responsive">
+                        <table class="table table-striped">
+                          <tr>
+                            <td>Harga Barang</td>
+                            <td>Rp <?=number_format($fetch_data['total_hargabarang'])?></td>
+                          </tr>
+                          <tr>
+                            <td>Biaya Perangsur</td>
+                            <td>Rp <?=number_format($fetch_data['bayar_perangsur'])?></td>
+                          </tr>
+                          <tr>
+                            <td>Angsuran Ke</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Sudah Dibayar</td>
+                            <td>Rp <?=number_format($pembayarandebitur)?></td>
+                          </tr>
+                          <tr>
+                            <td>Belum Dibayar</td>
+                            <td>Rp <?=number_format($fetch_data['total_hargabarang']-$pembayarandebitur)?></td>
+                          </tr>
+                         </table> 
+                      </div>
+                    </div>
+                  </div>
+              </section>
             </div>
           </div>
         </div>
@@ -136,9 +251,10 @@
                   <tbody>
                     <?php foreach ($fetch_history_debitur as $fetch_history ): ?>
                     <tr>
-                      <td><?=$fetch_history['id_debitur']?></td>
+                      <?php $no=1 ?>
+                      <td><?=$no++?></td>
                       <td><?=$fetch_history['jumlah_bayar']?></td>
-                      <td><?=$fetch_history['tgl_bayar']?></td>
+                      <td><?=date('d-m-Y',strtotime($fetch_history['tgl_bayar']))?></td>
                     </tr>    
                     <?php endforeach ?>
                   </tbody>

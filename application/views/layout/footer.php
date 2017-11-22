@@ -61,7 +61,7 @@
 		$('input[name=bayar_perangsur]').val(parseInt((total_hargabarang-dp)/jumlah_angsuran));
 		$('input[name=bayar_dp]').val(parseInt(dp));
 		
-		var myDate=$('input[name=tanggal_pendaftaran]').val();
+		var myDate=$('input[name=tanggal_daftar]').val();
 		myDate=myDate.split("-");
 		var newDate=myDate[1]+"/"+myDate[0]+"/"+myDate[2];
 		var ubahtimestamp = new Date(newDate).getTime(); //will alert 1510592400000
@@ -70,8 +70,8 @@
 		var t = new Date(hitung);
 		var format=t.toLocaleDateString();
 		tanggal_selesai_bayar=format.split("/");
-		var tgl_lunas=tanggal_selesai_bayar[0]+"-"+tanggal_selesai_bayar[1]+"-"+tanggal_selesai_bayar[2];
-		$('input[name=tanggal_selesai_bayar]').val(tgl_lunas);
+		var tgl_lunas=tanggal_selesai_bayar[1]+"-"+tanggal_selesai_bayar[0]+"-"+tanggal_selesai_bayar[2];
+		$('input[name=tanggal_selesai]').val(tgl_lunas);
 
 	});
 	setTimeout(function(){

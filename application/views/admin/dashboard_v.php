@@ -16,11 +16,11 @@
     <!-- Main content -->
     <section class="content container-fluid">
      <div class="row">
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-md-3">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>4</h3>
+              <h3><?=$jumlahdebitur?></h3>
               <p>Jumlah Debitur</p>
             </div>
             <div class="icon">
@@ -32,15 +32,15 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-md-3">
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>5</h3>
-              <p>Lunas</p>
+              <h3>Rp <?=number_format($seluruhhargabarang);?></h3>
+              <p>Seluruh Harga Barang</p>
             </div>
             <div class="icon">
-              <i class="ion ion-checkmark-round"></i>
+              RP
             </div>
             <a href="#" class="small-box-footer">
               More info <i class="fa fa-arrow-circle-right"></i>
@@ -48,12 +48,11 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-md-3">
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3><?php echo number_format(5000000); ?></h3>
-
+              <h3>Rp <?=number_format($terbayar);?></h3>
               <p>Terbayar</p>
             </div>
             <div class="icon">
@@ -65,12 +64,11 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-md-3">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3><?php echo number_format(2000000); ?></h3>
-
+              <h3>Rp <?=number_format($seluruhhargabarang-$terbayar)?></h3>
               <p>Belum Terbayar</p>
             </div>
             <div class="icon">
@@ -84,7 +82,7 @@
         <!-- ./col -->
       </div>
       <div class="row">
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-md-3">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
@@ -100,10 +98,22 @@
             </a>
           </div>
         </div>
-       <!--  <div class="col-md-6 col-md-offset-3">
-            <div id="kalender"></div>
-        </div> -->
-         <!-- /.col -->
+        <div class="col-md-3">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>0</h3>
+              <p>Lunas</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-checkmark-round"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+       
       </div>
    </section>
    <!-- /.content -->
