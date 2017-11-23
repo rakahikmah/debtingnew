@@ -32,5 +32,10 @@ a.login-btn{
 	background-size: cover;
 }
 a#tombol{
-	color:white !important;
+	color:white;
+}
+@media (max-width: 991px){
+	a#tombol{
+		color:black;
+	}
 }

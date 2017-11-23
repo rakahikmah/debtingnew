@@ -1154,8 +1154,8 @@ a:focus {
 }
 @media (max-width: 991px) {
   .navbar-nav > .user-menu > .dropdown-menu > .user-body a {
-    background: #fff !important;
-    color: #444;
+    background: #fff;
+    color: black;
   }
 }
 .navbar-nav > .user-menu > .dropdown-menu > .user-footer {

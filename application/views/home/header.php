@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/font-awesome/css/font-awesome.min.css') ?>">
  
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/Ionicons/css/ionicons.min.css') ?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/AdminLTE.min.css') ?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/AdminLTE.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/skins/skin-blue.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/datatables.net-bs/css/dataTables.bootstrap.min.css')?>">
    <link rel="stylesheet" href="<?php echo base_url('assets/customs/home.css') ?>">
@@ -33,16 +33,18 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a class="navtab" href="#"><span class="glyphicon glyphicon-user"></span> Home</a></li>
-      <li><a class="navtab" href="#"><span class="glyphicon glyphicon-log-in"></span> Unggah Pembayaran</a></li>
-      <li><a class="navtab" href="#"><span class="glyphicon glyphicon-log-in"></span> Riwayat Transaksi</a></li>
+        <li><a class="navtab" href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+      <li><a class="navtab" href="#"><span class="glyphicon glyphicon-upload"></span> Unggah Pembayaran</a></li>
+      <li><a class="navtab" href="#"><span class="glyphicon glyphicon-time"></span> Riwayat Transaksi</a></li>
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rama<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li class="user-header">
+              <center>
               <h3>Rama Febriandy</h3>
               <h3 class="success">Sisa Pembayaran:<p class="text-success">Rp.500.000</p></h3>
               </li>
+             
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="row">
@@ -53,6 +55,7 @@
                     <a id="tombol" href="#" class="btn btn-primary">Kirim Pesan</a>
                   </div>
                 </div>
+                 </center>
                 <!-- /.row -->
               </li>
               <!-- Menu Footer-->
