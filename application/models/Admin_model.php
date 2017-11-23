@@ -5,7 +5,7 @@ class Admin_model extends CI_Model {
     {
         parent::__construct();
     }
-    public function seluruhhargabarang(){
+    public function seluruhpiutang(){
         
         $this->db->select('SUM(total_hargabarang) as total');
         $this->db->from('tb_barang');

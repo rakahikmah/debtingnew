@@ -31,3 +31,6 @@ a.login-btn{
 	color: white;
 	background-size: cover;
 }
+a#tombol{
+	color:white !important;
+}
