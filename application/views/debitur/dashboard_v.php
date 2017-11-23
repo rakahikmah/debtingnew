@@ -13,8 +13,8 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>4</h3>
-              <p>Jumlah Debitur</p>
+              <h3><?php number_format($totalhargadebitur); ?></h3>
+              <p>Total Pembayaran</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-stalker"></i>

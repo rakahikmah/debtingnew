@@ -17,9 +17,10 @@ class Debitur extends CI_Controller {
 
 	public function index()
 	{
+		$data['totalhargadebitur']=$this->debitur_model->totalhargadebitur();
 		$this->load->view('layout/header');
 		$this->load->view('layout/aside');
-		$this->load->view('debitur/dashboard_v');
+		$this->load->view('debitur/dashboard_v',$data);
 		$this->load->view('layout/footer');
 	}
 
