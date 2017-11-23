@@ -56,9 +56,6 @@
                 </thead>
                 <tbody>
                    <?php foreach ($fetch_data->result() as $row) :?>
-                    <?php if ($row->username == "admin"): ?>
-                      <?php continue; ?>
-                    <?php endif ?>
                         <tr>
                           <td><?php echo $row->id_debitur;?></td>
                           <td><?php echo $row->nik;?></td>
@@ -71,7 +68,7 @@
                            <a href="<?php echo base_url("admin/editdebitur/$row->id_debitur") ?>" class="btn btn-warning">Edit</a>
 
                            <!--  <button class="btn btn-primary btn-detail" value="<?php echo $row->id_debitur ?>">detail2  </button> -->
-                            <a href="<?php echo base_url("admin/deletedebitur/$row->id_debitur") ?>" class="btn btn-danger">Delete</a>
+                            <a href="<?php echo base_url("admin/bayarangsuran/$row->id_debitur") ?>" class="btn btn-danger">Delete</a>
                           </td>
                         </tr>
                       <?php endforeach; ?>
@@ -88,26 +85,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
- <!--  <div class="modal fade modal-detail" role="dialog">
- <div class="modal-dialog">
- 
-   Modal content
-   <div class="modal-content">
-     <div class="modal-header">
-       <button type="button" class="close" data-dismiss="modal">&times;</button>
-       <h4 class="modal-title">Detail Debitur</h4>
-     </div>
-     <div class="modal-body">
-       <input type="text" class="nama"><br>
-       <input type="text" class="alamat">
-     </div>
-     <div class="modal-footer">
-       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-     </div>
-   </div>
- 
- </div>
- </div> -->
+
 
 
 <script>

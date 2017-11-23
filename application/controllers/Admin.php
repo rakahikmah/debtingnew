@@ -16,8 +16,8 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$data['jumlahdebitur'] 			= $this->admin_model->jumlahdebitur();
-		$data['seluruhhargabarang']		= $this->admin_model->seluruhhargabarang();
-		$data['terbayar']				= $this->admin_model->terbayar();
+		$data['seluruhhargabarang']		= $this->admin_model->seluruhpiutang();
+		$data['terbayar']				= $this->admin_model->terbayarhutang();
 		$this->load->view('layout/header');
 		$this->load->view('layout/aside');
 		$this->load->view('admin/dashboard_v',$data);
@@ -55,9 +55,11 @@ class Admin extends CI_Controller {
 
 	public function inputpembayaran()
 	{
+		$data['fetch_data']=$this->admin_model->fetch_data_debitur();
+
 		$this->load->view('layout/header');
 		$this->load->view('layout/aside');
-		$this->load->view('admin/datadebiturbayar_v');
+		$this->load->view('admin/datadebiturbayar_v',$data);
 		$this->load->view('layout/footer');
 	}
 
@@ -69,6 +71,21 @@ class Admin extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
+	public function bayarangsurandebitur($id_debitur = false){
+		$data['fetch_data'] = $this->admin_model->fetch_detail_debitur($id_debitur);
+
+		if ($id_debitur == NULL) {
+			$this->admin_model->bayarangsurandebitur();
+			$this->session->set_flashdata('info','true');
+			redirect('admin/inputpembayaran');
+		}else{
+			$this->load->view('layout/header');
+			$this->load->view('layout/aside');
+			$this->load->view('admin/formpembayaran_v',$data);
+			$this->load->view('layout/footer');
+		}
+
+	}
 
 	public function registerdebitur(){
 		//form validation untuk debitur

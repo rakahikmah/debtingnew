@@ -6,9 +6,9 @@
 	    <h3>The Mage Of Debt</h3>
 	    <?php if ($this->session->has_userdata('role')): ?>
               <?php if ($this->session->userdata('role') =='admin'): ?>
-                <a href="<?=site_url('admin')?>" class="btn btn-primary login-btn"> Login As <?=$this->session->userdata('role')?></a>
+                <a href="<?=site_url('admin')?>" class="btn btn-primary login-btn"><?=$this->session->userdata('nama')?></a>
               <?php else: ?>  
-                <a href="<?=site_url('debitur')?>" class="btn btn-primary login-btn">Login As <?=$this->session->userdata('role')?></a>
+                <a href="<?=site_url('debitur')?>" class="btn btn-primary login-btn"><?=$this->session->userdata('nama')?></a>
               <?php endif; ?>
             <?php else: ?>
              <a href="<?=site_url('login')?>" class="btn btn-primary login-btn">Login</a>

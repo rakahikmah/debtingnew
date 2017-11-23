@@ -26,7 +26,7 @@ class Resetpassword extends CI_Controller {
 			$this->load->view('login/resetform_v');
 		} else {
 			$id_debitur = $this->session->userdata('id_debitur');
-			$this->admin_model->reset_password_debitur($id_debitur);
+			$this->debitur_model->reset_password_debitur($id_debitur);
 			$data_session = array (
 								'username'=>$this->session->userdata('username'),
 								'id_debitur'=>$this->session->userdata('id_debitur'),

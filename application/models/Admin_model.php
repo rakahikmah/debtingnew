@@ -84,6 +84,11 @@ class Admin_model extends CI_Model {
         return $this->db->insert("tb_pembayaran",$data);
     }
 
+    public function delete_debitur($id_debitur)
+    {
+        return $this->db->delete('tb_debitur',array('id_debitur'=>$id_debitur));
+    }
+
     public function fetch_data_debitur(){
         $this->db->select("*");
         $this->db->where_not_in('role','admin');
@@ -100,8 +105,17 @@ class Admin_model extends CI_Model {
         $this->db->where('tb_debitur.id_debitur',$id_debitur);
         $query = $this->db->get();
         return $query->row_array();
+    }
 
-        
+    public function bayarangsurandebitur()
+    {
+        $data = array (
+            'id_debitur'=>$this->input->post('id_debitur'),
+            'id_barang'=>$this->input->post('id_barang'),
+            'jumlah_bayar'=>$this->input->post('jumlah_bayar'),
+            'tgl_bayar'=>date('Y-m-d'),
+        );
+        return $this->db->insert('tb_pembayaran',$data);
     }
 
     public function fetch_history_debitur($id_debitur)
