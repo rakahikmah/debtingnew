@@ -69,8 +69,8 @@
 		var hitung = parseInt(ubahtimestamp)+jangkawaktubayar;
 		var t = new Date(hitung);
 		var format=t.toLocaleDateString();
-		tanggal_selesai_bayar=format.split("/");
-		var tgl_lunas=tanggal_selesai_bayar[1]+"-"+tanggal_selesai_bayar[0]+"-"+tanggal_selesai_bayar[2];
+		var tanggal_selesai_bayar=format.split("/");
+		var tgl_lunas=tanggal_selesai_bayar[0]+"-"+tanggal_selesai_bayar[1]+"-"+tanggal_selesai_bayar[2];
 		$('input[name=tanggal_selesai]').val(tgl_lunas);
 
 	});

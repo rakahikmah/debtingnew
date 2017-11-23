@@ -30,7 +30,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Debting</b></a>
+    <a href="<?=site_url('')?>"><b>Debting</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
