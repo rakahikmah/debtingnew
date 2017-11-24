@@ -68,7 +68,9 @@ class Debitur extends CI_Controller {
 			$this->load->view('layout/footer');
 		}
 	}
-
+public function kirimpesan(){
+	$this->load->view('debitur/pesan_v');
+}
 }
 
 /* End of file Debitur.php */

@@ -15,7 +15,7 @@
    <link rel="stylesheet" href="<?php echo base_url('assets/customs/home.css') ?>">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body>
+<body style="">
   <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,10 +32,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-      <ul class="nav navbar-nav navbar-right">
-        <li><a class="navtab" href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-      <li><a class="navtab" href="#"><span class="glyphicon glyphicon-upload"></span> Unggah Pembayaran</a></li>
-      <li><a class="navtab" href="#"><span class="glyphicon glyphicon-time"></span> Riwayat Transaksi</a></li>
+      <ul class="nav navbar-nav nav-pills navbar-right">
+      <li><a class="navtab" data-toggle="pill" href="#home"><span class="glyphicon glyphicon-upload"></span> Home</a></li>
+      <li><a class="navtab" data-toggle="pill" href="#unggah"><span class="glyphicon glyphicon-upload"></span> Unggah Pembayaran</a></li>
+      <li><a class="navtab" data-toggle="pill" href="#riwayat"><span class="glyphicon glyphicon-time"></span> Riwayat Transaksi</a></li>
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rama<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -49,10 +49,10 @@
               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
-                    <a id="tombol" href="#" class="btn btn-primary">Pesan</a>
+                    <a id="tombol" href="#" class="btn btn-primary">Pesan <span class="label label-success">4</span></a>
                   </div>
                   <div class="col-xs-4 text-center col-md-offset-3">
-                    <a id="tombol" href="#" class="btn btn-primary">Kirim Pesan</a>
+                    <a id="tombol" href="<?php echo site_url('debitur/kirimpesan') ?>" class="btn btn-primary">Kirim Pesan</a>
                   </div>
                 </div>
                  </center>

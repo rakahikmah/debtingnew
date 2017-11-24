@@ -34,6 +34,14 @@ a.login-btn{
 a#tombol{
 	color:white;
 }
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #87b5ff;
+}
+.table tr,th {
+   text-align: center;   
+}
+
 @media (max-width: 991px){
 	a#tombol{
 		color:black;

@@ -1,5 +1,6 @@
-<div class="container-fluid header-image">	
-	
+<div class="tab-content">
+	 <div id="home" class="tab-pane fade in active">
+ <div class="container-fluid header-image">		
 	  <div class="container">
 	  	<center>
 	    <h2>Debting</h2>
@@ -30,6 +31,81 @@
 	    </div>
 	 </div>
 </div>
+</div>
+<div id="unggah"  style="padding: 150px 0;" class="tab-pane fade in active">
+		<div class="box-body">
+			<div class="row">
+				<h1 class="text-center">Unggah Pembayaran</h1>
+			</div>
+			<div class="row">
+				 <form class="form-horizontal">
+  <div class="form-group">
+    <label class="control-label col-sm-4" for="id_debitur">ID Debitur</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" placeholder="">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-4">Nama</label>
+    <div class="col-sm-5">
+      <input type="password" class="form-control" placeholder="">
+    </div>
+  </div>
+   <div class="form-group">
+    <label class="control-label col-sm-4">Bukti Transfer</label>
+    <div class="col-sm-5">
+      <input type="file" placeholder="">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-4">
+      <input type="hidden" value="non-verified" placeholder="">
+    </div>
+  </div>
+  <div class="row">
+    	<div class="col-xs-4 col-xs-offset-8">
+    		<input class="btn btn-lg btn-primary" type="submit" value="Kirim">
+    	</div>
+    </div>
+</form> 
+			</div>
+		</div>
+	</div>
+
+	<div id="riwayat" style="padding: 150px 0;" class="tab-pane fade in active">
+		<h1 class="text-center">Riwayat Transaksi</h1>
+ <div class="box-body" style="">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="">
+                <table class="table table-bordered table-hover table-responsive">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Jumlah Pembayaran</th>
+                      <th>Tanggal</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  
+                    <tr>
+                     
+                      <td>1</td>
+                      <td>500.000</td>
+                      <td>14-04-1996</td>
+                    </tr>    
+                   <tr>
+                      <td>1</td>
+                      <td>500.000</td>
+                      <td>14-04-1996</td>
+                    </tr>    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+	</div>
 	<div class="footer">
 <div class="container-fluid">
 	<div class="row">
@@ -63,5 +139,8 @@
   		</div>
 	</div>
 	</div>
+</div>
+
+	
 </div>
 </div>
