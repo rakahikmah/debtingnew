@@ -19,20 +19,18 @@ class Debitur extends CI_Controller {
 		$data['sudahterbayar'] =$this->debitur_model->sudahterbayar();
 		$data['seluruhhutang'] =$this->debitur_model->seluruhhutang();
 
-		$this->load->view('layout/header');
-		$this->load->view('layout/aside');
+		$this->load->view('home/header');
 		$this->load->view('debitur/dashboard_v',$data);
-		$this->load->view('layout/footer');
+		$this->load->view('home/footer');
 	}
 
 	public function historypembayaran()
 	{
 		$data['historypembayaran'] =$this->debitur_model->historypembayaran();
 		
-		$this->load->view('layout/header');
-		$this->load->view('layout/aside');
+		$this->load->view('home/header');
 		$this->load->view('debitur/historypembayaran_v',$data);
-		$this->load->view('layout/footer');
+		$this->load->view('home/footer');
 	}
 
 	
@@ -50,10 +48,9 @@ class Debitur extends CI_Controller {
 			$data['error'] = $this->upload->display_errors();
 			$data['detaildata'] = $this->debitur_model->fetch_detail_debitur();
 
-			$this->load->view('layout/header');
-			$this->load->view('layout/aside');
+				$this->load->view('home/header');
 			$this->load->view('debitur/uploadbukti_v',$data);
-			$this->load->view('layout/footer');
+			$this->load->view('home/footer');
 		}
 		else{
 			$data = $this->upload->data();
@@ -62,15 +59,24 @@ class Debitur extends CI_Controller {
 
 			$data['error'] = $this->upload->display_errors();
 			$data['detaildata'] = $this->debitur_model->fetch_detail_debitur();
-			$this->load->view('layout/header');
-			$this->load->view('layout/aside');
+			$this->load->view('home/header');
 			$this->load->view('debitur/uploadbukti_v',$data);
-			$this->load->view('layout/footer');
+			$this->load->view('home/footer');
 		}
 	}
-public function kirimpesan(){
-	$this->load->view('debitur/pesan_v');
+		public function kirimpesan(){
+			$this->load->view('home/header');
+			$this->load->view('debitur/pesan_v');
 }
+	function detaildebitur()
+	{
+		$data['fetch_data']				=$this->admin_model->fetch_detail_debitur($id_debitur);
+		$data['fetch_history_debitur'] 	=$this->admin_model->fetch_history_debitur($id_debitur);
+		$data['pembayarandebitur']      =$this->admin_model->sudahdibayardebitur($id_debitur);
+		$this->load->view('home/header');
+		$this->load->view('debitur/detaildebitur_v',$data);
+		$this->load->view('home/footer');
+	}
 }
 
 /* End of file Debitur.php */

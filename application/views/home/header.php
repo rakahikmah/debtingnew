@@ -33,9 +33,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav nav-pills navbar-right">
-      <li><a class="navtab" data-toggle="pill" href="#home"><span class="glyphicon glyphicon-upload"></span> Home</a></li>
-      <li><a class="navtab" data-toggle="pill" href="#unggah"><span class="glyphicon glyphicon-upload"></span> Unggah Pembayaran</a></li>
-      <li><a class="navtab" data-toggle="pill" href="#riwayat"><span class="glyphicon glyphicon-time"></span> Riwayat Transaksi</a></li>
+      <li><a class="navtab" href="<?=site_url('debitur');?>"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+      <li><a class="navtab" href="<?=site_url('debitur/uploadbukti');?>"><span class="glyphicon glyphicon-upload"></span> Unggah Pembayaran</a></li>
+      <li><a class="navtab" href="<?=site_url('debitur/historypembayaran');?>"><span class="glyphicon glyphicon-time"></span> Riwayat Transaksi</a></li>
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rama<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -64,7 +64,7 @@
                   <a href="" class="btn btn-info">Reset Password</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-danger btn-flat">Log Out</a>
+                  <a href="<?php echo site_url('login?logout=signout')?>" class="btn btn-danger btn-flat">Log Out</a>
                 </div>
               </li>
           </ul>

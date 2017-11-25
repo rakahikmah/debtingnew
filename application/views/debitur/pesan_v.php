@@ -1,41 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Kirim Pesan</title>
-</head>
-<body>
-	 <div class="box box-info">
-            <div class="box-header">
-              <i class="fa fa-envelope"></i>
-
-              <h3 class="box-title">Quick Email</h3>
-              <!-- tools box -->
-              <div class="pull-right box-tools">
-                <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip"
-                        title="Remove">
-                  <i class="fa fa-times"></i></button>
+<section id="contact" style="padding: 150px 0;">
+      <div class="section-content">
+        <h1 class="section-header text-center">Kirim Pesan</h1>
+        <h3></h3>
+      </div>
+      <div class="contact-section">
+      <div class="container">
+        <form>
+          <div class="col-md-6 col-md-offset-3 form-line">
+              <div class="form-group">
+                <label for="exampleInputUsername">Your name</label>
+                <input type="text" class="form-control" id="" placeholder=" Enter Name" readonly>
               </div>
-              <!-- /. tools -->
+              <div class="form-group">
+                <label for="exampleInputEmail">Email Address</label>
+                <input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id" readonly>
+              </div>  
+              <div class="form-group">
+                <label for="telephone">Mobile No.</label>
+                <input type="tel" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no.">
+              </div>
+               <div class="form-group">
+                <label for ="description"> Message</label>
+                <textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>
+              </div>
+              <div>
+
+                <button type="button" class="btn btn-primary submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+              </div>
             </div>
-            <div class="box-body">
-              <form action="#" method="post">
-                <div class="form-group">
-                  <input type="email" class="form-control" name="emailto" placeholder="Email to:">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject">
-                </div>
-                <div>
-                  <textarea class="textarea" placeholder="Message"
-                            style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                </div>
-              </form>
-            </div>
-            <div class="box-footer clearfix">
-              <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
-                <i class="fa fa-arrow-circle-right"></i></button>
-            </div>
-          </div>
-</body>
-</html>
+           
+             
+              
+        </form>
+      </div>
+    </section>
