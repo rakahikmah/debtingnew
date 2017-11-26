@@ -3,13 +3,10 @@
     <!-- Content Header (Page header) -->
     <div class="isi" style="padding: 150px 0px;">
     <section class="content-header">
-      <h1>
-        Data Debitur
+      <h1 align="center">
+        History Pembayaran
       </h1>
     </section>
-
-  
-
     <!-- Main content -->
     <section class="content container-fluid">
       <div class="row">
@@ -17,13 +14,12 @@
           <div class="box">
             <div class="box-body">
               <div class="table-responsive">
-              <table id="datadebitur" class="table  table-hover">
+              <table id="datadebitur" class="table table-hover">
                 <thead>
                 <tr>
                   <th>Pembayaran</th>
                   <th>Bayar</th>
                   <th>Tanggal</th>
-                  <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -33,7 +29,6 @@
                       <td><?=$no++?></td>
                       <td>Rp<?=number_format($pembayaran['jumlah_bayar'])?></td>
                       <td><?=date('d-M-Y',strtotime($pembayaran['tgl_bayar']))?></td>
-                      <td><a class="btn btn-primary" href="<?=site_url('debitur/detaildebitur')?>">Detail</a></td>
                     </tr>     
                   <?php endforeach ?>   
                 </tbody>

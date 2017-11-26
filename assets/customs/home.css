@@ -47,3 +47,14 @@ a#tombol{
 		color:black;
 	}
 }
+
+.navbar-brand,
+  .navbar-nav li a {
+      line-height: 60px;
+      height: 60px;
+      padding-top: 0;
+  }
+
+.margin-jumbroton{
+	margin-top: 90px;
+} 

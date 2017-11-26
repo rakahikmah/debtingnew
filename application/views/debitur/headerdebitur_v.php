@@ -15,12 +15,7 @@
    <link rel="stylesheet" href="<?php echo base_url('assets/customs/home.css') ?>">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<style>
-  
-</style>
-
 <body>
-  
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -36,22 +31,22 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <!-- <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right">
         <li><a href="<?=site_url('debitur');?>"><span class="glyphicon glyphicon-home"></span> Home</a></li>
         <li><a  href="<?=site_url('debitur/uploadbukti');?>"><span class="glyphicon glyphicon-upload"></span> Unggah Pembayaran</a></li>
         <li><a class="navtab" href="<?=site_url('debitur/historypembayaran');?>"><span class="glyphicon glyphicon-time"></span> Riwayat Transaksi</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rama<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>Rama<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Pesan</a></li>
-            <li><a href="#">Kirim Pesan</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="<?php echo site_url('debitur/kirimpesan') ?>">Kirim Pesan</a></li>
+            <li><a href="#">Detail Profile</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Ganti Pesan</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="#">Ganti Password</a></li>
+            <li><a href="<?php echo site_url('login?logout=signout')?>">Logout</a></li>
           </ul>
         </li>
-      </ul> -->
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
