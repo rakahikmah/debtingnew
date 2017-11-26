@@ -1150,12 +1150,12 @@ a:focus {
   clear: both;
 }
 .navbar-nav > .user-menu > .dropdown-menu > .user-body a {
-  color: #444 !important;
+  color: #444;
 }
 @media (max-width: 991px) {
   .navbar-nav > .user-menu > .dropdown-menu > .user-body a {
-    background: #fff !important;
-    color: #444 !important;
+    background: #fff;
+    color: black;
   }
 }
 .navbar-nav > .user-menu > .dropdown-menu > .user-footer {

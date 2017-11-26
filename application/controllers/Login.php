@@ -8,7 +8,7 @@ class Login extends CI_Controller {
 		parent::__construct();
 		if (isset($_GET['logout']) == 'signout') {
 			$this->session->sess_destroy();
-			redirect('login');
+			redirect('welcome');
 		}else{
 			if ($this->session->has_userdata('role')) {
 				if ($this->session->userdata('role') == "admin") {
