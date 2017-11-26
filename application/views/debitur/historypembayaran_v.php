@@ -1,6 +1,7 @@
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  
     <!-- Content Header (Page header) -->
+    <div class="isi" style="padding: 150px 0px;">
     <section class="content-header">
       <h1>
         Data Debitur
@@ -22,6 +23,7 @@
                   <th>Pembayaran</th>
                   <th>Bayar</th>
                   <th>Tanggal</th>
+                  <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,6 +33,7 @@
                       <td><?=$no++?></td>
                       <td>Rp<?=number_format($pembayaran['jumlah_bayar'])?></td>
                       <td><?=date('d-M-Y',strtotime($pembayaran['tgl_bayar']))?></td>
+                      <td><a class="btn btn-primary" href="<?=site_url('debitur/detaildebitur')?>">Detail</a></td>
                     </tr>     
                   <?php endforeach ?>   
                 </tbody>
@@ -43,8 +46,8 @@
         </div>
       </div> 
     </section>
+    </div>
     <!-- /.content -->
-  </div>
 <script>
 
 </script>

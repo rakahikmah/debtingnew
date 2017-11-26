@@ -52,7 +52,7 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>Rp <?=number_format($terbayar);?></h3>
+              <h3>Rp <?=number_format($terbayarhutang);?></h3>
               <p>Terbayar</p>
             </div>
             <div class="icon">
@@ -68,7 +68,7 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>Rp <?=number_format($seluruhhargabarang-$terbayar)?></h3>
+              <h3>Rp <?=number_format($seluruhhargabarang-$terbayarhutang)?></h3>
               <p>Belum Terbayar</p>
             </div>
             <div class="icon">

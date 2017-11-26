@@ -1,5 +1,4 @@
 <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -7,7 +6,7 @@
       </h1>
     </section>
     <!-- Main content -->
-    <section class="content container-fluid">
+    <section class="content container-fluid" style="padding: 150px 0px;">
      <div class="row">
         <!-- ./col -->
         <div class="col-md-4">
@@ -61,5 +60,7 @@
         </div>
         <!-- ./col -->
       </div>
+    </section>
+
      
    
