@@ -5,7 +5,7 @@
       <h1>
         Dashboard
       </h1>
-      <?php if ($this->session->flashdata('informasi')) :
+    <?php if ($this->session->flashdata('informasi')) :
                ?>
       <div class="alert alert-success">
         <i class="icon fa fa-check"></i>
@@ -47,6 +47,7 @@
             </a>
           </div>
         </div>
+        
         <!-- ./col -->
         <div class="col-md-3">
           <!-- small box -->

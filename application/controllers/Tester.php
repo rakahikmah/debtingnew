@@ -11,6 +11,15 @@ class Tester extends CI_Controller {
         echo date('Y-m-d',strtotime($this->input->post('tanggal_selesai_bayar')));	
 	}
 
+	public function waktu()
+	{
+		$time = date("h:i:sa");
+		echo $time."<br>";
+		echo $coba = strtotime($time)+(3600*6);
+		echo "<br>";
+		echo date("h:i:s",$coba);
+	}
+
 	/*public function test($id_debitur)
 	{
 		$ar=array();

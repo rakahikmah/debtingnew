@@ -164,7 +164,7 @@
                       <?php $no=1 ?>
                       <td><?=$no++?></td>
                       <td><?=$fetch_history['jumlah_bayar']?></td>
-                      <td><?=date('d-m-Y',strtotime($fetch_history['tgl_bayar']))?></td>
+                      <td><?=date('d-M-Y',strtotime($fetch_history['tgl_bayar']))?></td>
                     </tr>    
                     <?php endforeach ?>
                   </tbody>

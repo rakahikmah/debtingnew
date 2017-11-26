@@ -8,12 +8,14 @@ class Admin_model extends CI_Model {
     public function seluruhpiutang(){
         
         $this->db->select('SUM(total_hargabarang) as total');
+
         $this->db->from('tb_barang');
         return $this->db->get()->row()->total;
     }
 
     public function terbayarhutang(){
         $this->db->select('SUM(jumlah_bayar) as total');
+        $this->db->where('status','sudah');
         $this->db->from('tb_pembayaran');
         return $this->db->get()->row()->total;
     }
@@ -79,6 +81,7 @@ class Admin_model extends CI_Model {
                     "jumlah_bayar"   =>$this->input->post("bayar_dp"),
                     "tgl_bayar"      =>date('Y-m-d'),
                     "id_barang"      =>$this->input->post("id_barang"),
+                    "status"         =>'sudah',
                 );
         return $this->db->insert("tb_pembayaran",$data);
     }
@@ -109,10 +112,11 @@ class Admin_model extends CI_Model {
     public function bayarangsurandebitur()
     {
         $data = array (
-            'id_debitur'=>$this->input->post('id_debitur'),
-            'id_barang'=>$this->input->post('id_barang'),
-            'jumlah_bayar'=>$this->input->post('jumlah_bayar'),
-            'tgl_bayar'=>date('Y-m-d'),
+            'id_debitur'   => $this->input->post('id_debitur'),
+            'id_barang'    => $this->input->post('id_barang'),
+            'jumlah_bayar' => $this->input->post('jumlah_bayar'),
+            'tgl_bayar'    => date('Y-m-d'),
+            'status'       => 'sudah'
         );
         return $this->db->insert('tb_pembayaran',$data);
     }

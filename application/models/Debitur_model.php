@@ -9,7 +9,11 @@ class Debitur_model extends CI_Model {
 
     public function sudahterbayar(){
         $this->db->select('SUM(jumlah_bayar) as total');
-        $this->db->where('id_debitur',$this->session->userdata('id_debitur'));
+        $where = array(
+            'id_debitur' =>$this->session->userdata('id_debitur'),
+            'status'     =>'sudah',
+        );
+        $this->db->where($where);
         $this->db->from('tb_pembayaran');
         return $this->db->get()->row()->total;
     }
@@ -50,7 +54,8 @@ class Debitur_model extends CI_Model {
         return $query->row_array();
     }
 
-    public function uploadbuktipembayaran($picture){
+    public function uploadbuktipembayaran($picture)
+    {
         $data = array (
             'id_debitur'        => $this->input->post('id_debitur'),
             'id_barang'         => $this->input->post('id_barang'),
@@ -58,9 +63,36 @@ class Debitur_model extends CI_Model {
             'status'            => 'belum',
             'keterangan'        => $this->input->post('keterangan')
         );
-
         return $this->db->insert('tb_konfirm_bayar',$data);
+    }
 
+    public function inputbayarlewatupload()
+    {
+        $data = array (
+            'id_debitur'        => $this->input->post('id_debitur'),
+            'id_barang'         => $this->input->post('id_barang'),
+            'jumlah_bayar'      => $this->input->post('jumlah_bayar'),
+            'tgl_bayar'         => date('Y-m-d'),
+            'status'            => 'belum'
+        );
+
+        return $this->db->insert('tb_pembayaran',$data);
+    }
+
+    public function kirimpesan()
+    {
+
+        $time = date("h:i:sa");
+        $chagetimestamp= strtotime($time)+(3600*6);
+        $data = array (
+            'id_debitur'    => $this->input->post('id_debitur'),
+            'subjek'        => $this->input->post('subjek'),
+            'isipesan'      => $this->input->post('keterangan'),
+            'tgl_terkirim'  => date('Y-m-d'),
+            'waktu'         => date('h:i:s',$chagetimestamp)
+        );
+
+        return $this->db->insert('tb_pesan',$data);
     }
 
 }
