@@ -5,6 +5,7 @@ class Debitur extends CI_Controller {
 
 	public function __construct()
 	{
+		date_default_timezone_set("Asia/Jakarta");
 		parent::__construct();
 		if (!$this->session->has_userdata('role')) {
 			redirect('login');
@@ -90,6 +91,7 @@ class Debitur extends CI_Controller {
 		$data['fetch_data']				=$this->admin_model->fetch_detail_debitur($id_debitur);
 		$data['fetch_history_debitur'] 	=$this->admin_model->fetch_history_debitur($id_debitur);
 		$data['pembayarandebitur']      =$this->admin_model->sudahdibayardebitur($id_debitur);
+		
 		$this->load->view('debitur/headerdebitur_v');
 		$this->load->view('debitur/detaildebitur_v',$data);
 		$this->load->view('home/footer');

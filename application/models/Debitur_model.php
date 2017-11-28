@@ -68,7 +68,7 @@ class Debitur_model extends CI_Model {
 
     public function inputbayarlewatupload()
     {
-        $data = array (
+       $data = array (
             'id_debitur'        => $this->input->post('id_debitur'),
             'id_barang'         => $this->input->post('id_barang'),
             'jumlah_bayar'      => $this->input->post('jumlah_bayar'),
@@ -81,18 +81,17 @@ class Debitur_model extends CI_Model {
 
     public function kirimpesan()
     {
-
-        $time = date("h:i:sa");
-        $chagetimestamp= strtotime($time)+(3600*6);
+        date_default_timezone_set("Asia/Jakarta");
         $data = array (
             'id_debitur'    => $this->input->post('id_debitur'),
             'subjek'        => $this->input->post('subjek'),
             'isipesan'      => $this->input->post('keterangan'),
             'tgl_terkirim'  => date('Y-m-d'),
-            'waktu'         => date('h:i:s',$chagetimestamp)
-        );
+            'waktu'         => date('G:i:s'),
+            'status'        => 'belum'
+    );
 
-        return $this->db->insert('tb_pesan',$data);
+        return $this->db->insert('tb_pesan_from_debitur',$data);
     }
 
 }

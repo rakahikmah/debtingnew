@@ -46,13 +46,7 @@
                   <th>No Telepon</th>
                   <th>E-Mail</th>
                   <th>Opsi</th>
-                  <!-- <th>Pekerjaan</th> -->
-                  <!-- <th>Nama Barang</th> -->
-                  <!-- <th>Harga Barang</th> -->
-                  <!-- <th>Cicilan Minimal</th> -->
-                  <!-- <th>Jatuh Tempo</th> -->
                 </tr>
-                 
                 </thead>
                 <tbody>
                    <?php foreach ($fetch_data->result() as $row) :?>
@@ -65,9 +59,7 @@
                           <td><?php echo $row->email;?></td>
                           <td class="col-md-3">
                             <a href="<?php echo base_url("admin/detaildebitur/$row->id_debitur") ?>" class="btn btn-info">Detail</a>
-                           <a href="<?php echo base_url("admin/editdebitur/$row->id_debitur") ?>" class="btn btn-warning">Edit</a>
-
-                           <!--  <button class="btn btn-primary btn-detail" value="<?php echo $row->id_debitur ?>">detail2  </button> -->
+                            <a href="<?php echo base_url("admin/kirimpesan/$row->id_debitur") ?>" class="btn btn-success">Kirim Pesan</a>
                             <a href="<?php echo base_url("admin/bayarangsuran/$row->id_debitur") ?>" class="btn btn-danger">Delete</a>
                           </td>
                         </tr>

@@ -13,11 +13,12 @@ class Tester extends CI_Controller {
 
 	public function waktu()
 	{
-		$time = date("h:i:sa");
+		date_default_timezone_set("Asia/Jakarta");
+		$time = date("G:i:s");
 		echo $time."<br>";
-		echo $coba = strtotime($time)+(3600*6);
-		echo "<br>";
-		echo date("h:i:s",$coba);
+		// echo $coba = strtotime($time)+(3600*6);
+		// echo "<br>";
+		// echo date("h:i:s",$coba);
 	}
 
 	/*public function test($id_debitur)

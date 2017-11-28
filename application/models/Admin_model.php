@@ -5,10 +5,9 @@ class Admin_model extends CI_Model {
     {
         parent::__construct();
     }
+    
     public function seluruhpiutang(){
-        
         $this->db->select('SUM(total_hargabarang) as total');
-
         $this->db->from('tb_barang');
         return $this->db->get()->row()->total;
     }
@@ -121,6 +120,44 @@ class Admin_model extends CI_Model {
         return $this->db->insert('tb_pembayaran',$data);
     }
 
+    public function fetch_konfirmasi_pembayaran()
+    {
+        $this->db->select('*');
+        $this->db->from('tb_konfirm_bayar');
+        $this->db->join('tb_debitur','tb_debitur.id_debitur = tb_konfirm_bayar.id_debitur');
+        $this->db->join('tb_barang','tb_barang.id_barang = tb_konfirm_bayar.id_barang');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+
+    public function updatekonfirmbuktipembayaran($id_debitur,$id_barang)
+    {
+        $data = array (
+            'status' => 'sudah'
+        );
+        
+        $this->db->where('id_barang',$id_barang);
+        $this->db->where('id_debitur',$id_debitur);
+        $this->db->where('status','belum');
+        $this->db->limit(1);
+        return $this->db->update('tb_konfirm_bayar',$data);
+    }
+
+    public function update_tb_pembayaran($id_debitur,$id_barang)
+    {
+        $data = array(
+            'status' => 'sudah'
+        );
+
+        $this->db->where('id_barang',$id_barang);
+        $this->db->where('id_debitur',$id_debitur);
+        $this->db->where('status','belum');
+        $this->db->limit(1);
+        return $this->db->update('tb_pembayaran',$data);
+
+    }
+
     public function fetch_history_debitur($id_debitur)
     {
         $this->db->select('*');
@@ -129,6 +166,16 @@ class Admin_model extends CI_Model {
         $this->db->where('tb_pembayaran.id_debitur', $id_debitur);
         $query = $this->db->get();
         return $query->result_array();
+    }
+
+    public function jumlahangsurandebitur($id_debitur)
+    {
+        $this->db->select('*');
+        $this->db->from('tb_pembayaran');
+        $this->db->join('tb_debitur','tb_debitur.id_debitur = tb_pembayaran.id_debitur');
+        $this->db->where('tb_pembayaran.id_debitur', $id_debitur);
+        $query = $this->db->get();
+        return $query->num_rows();
     }
 
    public function getkodedebitur() { 
@@ -149,7 +196,7 @@ class Admin_model extends CI_Model {
    }
 
    public function getkodebarang(){
-        $this->db->select("RIGHT(tb_barang.id_barang,3) AS kode ");
+            $this->db->select("RIGHT(tb_barang.id_barang,3) AS kode ");
             $this->db->order_by('id_barang', 'DESC');
             $this->db->limit(1);
             $query = $this->db->get('tb_barang');
@@ -163,6 +210,18 @@ class Admin_model extends CI_Model {
             $kodemax = str_pad($kode,3,"0",STR_PAD_LEFT);
             $kodejadi  = "BR".$kodemax;
             return $kodejadi;
+   }
+
+   public function pesanmasuk()
+   {
+        date_default_timezone_set("Asia/Jakarta"); 
+        
+        $this->db->select('*');
+        $this->db->from('tb_pesan_from_debitur');
+        $this->db->join('tb_debitur', 'tb_debitur.id_debitur = tb_pesan_from_debitur.id_debitur');
+        $query = $this->db->get();
+        return $query->result_array();
+
    }
 
 }
