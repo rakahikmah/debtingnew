@@ -9,8 +9,8 @@
             </div>
     <?php endif; ?>
       <?php echo form_open_multipart('debitur/uploadbukti',array('class'=>'form-horizontal','method'=>'post')); ?>
+        
         <input type="hidden" name="id_barang" value="<?=$detaildata['id_barang']?>">
-        <input type="hidden" name="id_debitur" value="<?=$detaildata['id_debitur']?>">
         <input type="hidden" name="jumlah_bayar" value="<?=$detaildata['bayar_perangsur']?>">
           <div class="form-group">
             <label for="" class="col-md-2 control-label"></label>
@@ -18,6 +18,18 @@
               <?php if (isset($error)): ?>
                   <?=$error?>
               <?php endif ?>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-md-2 control-label">Id Debitur</label>
+            <div class="col-md-10">
+              <input type="text" name="id_debitur" class="form-control" value="<?=$detaildata['id_debitur']?>" readonly>
+            </div>
+          </div>
+           <div class="form-group">
+            <label for="" class="col-md-2 control-label">Nama Debitur</label>
+            <div class="col-md-10">
+              <input type="text" name="nama" class="form-control" value="<?=$detaildata['nama']?>" readonly>
             </div>
           </div>
           <div class="form-group">
