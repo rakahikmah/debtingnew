@@ -10,7 +10,7 @@
                 <div class="form-group">
                  <label for="" class="col-md-2 control-label ">Id Debitur</label>
                   <div class="col-md-10">
-                   <input type="text" name="subjek" class="form-control" value="<?=?>" readonly>
+                   <input type="text" name="subjek" class="form-control" value="" readonly>
                   </div>
                 </div>
                 <div class="form-group">
@@ -36,7 +36,7 @@
                      <button type="button" class="btn btn-primary submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
                   </div>
                 </div>
-            <?php echo form_close() ?>
+            <?php echo form_close(); ?>
           </div>
         </div>
     </div>
