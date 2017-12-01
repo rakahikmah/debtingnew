@@ -36,9 +36,9 @@
         <li><a  href="<?=site_url('debitur/uploadbukti');?>"><span class="glyphicon glyphicon-upload"></span> Unggah Pembayaran</a></li>
         <li><a class="navtab" href="<?=site_url('debitur/historypembayaran');?>"><span class="glyphicon glyphicon-time"></span> Riwayat Transaksi</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>Rama<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span><?=$this->session->userdata('nama')?><span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Pesan</a></li>
+            <li><a href="<?php echo site_url('debitur/pesan') ?>">Pesan</a></li>
             <li><a href="<?php echo site_url('debitur/kirimpesan') ?>">Kirim Pesan</a></li>
             <li><a href="#">Detail Profile</a></li>
             <li role="separator" class="divider"></li>

@@ -20,16 +20,19 @@
                   <th>Pembayaran</th>
                   <th>Bayar</th>
                   <th>Tanggal</th>
+                  <th>Cetak Bukti</th>
                 </tr>
                 </thead>
                 <tbody>
                   <?php $no=1; ?>
                   <?php foreach ($historypembayaran as $pembayaran): ?>
                     <tr>
-                      <td><?=$no++?></td>
+                      <td><?=$no?></td>
                       <td>Rp<?=number_format($pembayaran['jumlah_bayar'])?></td>
                       <td><?=date('d-M-Y',strtotime($pembayaran['tgl_bayar']))?></td>
-                    </tr>     
+                      <td><a href="<?=site_url("report/reportdebitur/$pembayaran[id_pembayaran]")?>" class="btn btn-info">cetak</a></td>
+                    </tr>
+                    <?php $no++ ?>     
                   <?php endforeach ?>   
                 </tbody>
               </table>

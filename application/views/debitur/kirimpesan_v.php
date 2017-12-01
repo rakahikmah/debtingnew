@@ -6,34 +6,42 @@
       <div class="contact-section">
         <div class="container">
           <div class="col-md-8 col-md-offset-2">
-            <?php echo form_open('debitur',array('class'=>'form-horizontal','method'=>'post')) ?>
+            <?php if ($this->session->flashdata('info')): ?>
+              <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fa fa-check"></i>Pesan Berhasil Terkirim </h5>
+              </div>
+            <?php endif; ?>
+            <?php echo form_open('debitur/kirimpesan',array('class'=>'form-horizontal','method'=>'post')) ?>
                 <div class="form-group">
-                 <label for="" class="col-md-2 control-label ">Id Debitur</label>
+                 <label for="id_debitur" class="col-md-2 control-label ">Id Debitur</label>
                   <div class="col-md-10">
-                   <input type="text" name="subjek" class="form-control" value="" readonly>
+                   <input type="text" name="id_debitur" class="form-control" value="<?=$detaildata['id_debitur']?>" readonly>
                   </div>
                 </div>
                 <div class="form-group">
-                 <label for="" class="col-md-2 control-label ">Email</label>
+                 <label for="email" class="col-md-2 control-label ">Email</label>
                   <div class="col-md-10">
-                   <input type="text" name="subjek" class="form-control" placeholder="subjek" readonly>
+                   <input type="text" name="email"  class="form-control" value="<?=$detaildata['email']?>" readonly>
                   </div>
                 </div>
                 <div class="form-group">
                  <label for="" class="col-md-2 control-label ">Subjek</label>
                   <div class="col-md-10">
-                   <input type="text" name="subjek" class="form-control" placeholder="Subject Message">
+                   <input type="text" name="subjek" class="form-control" value="<?=set_value('subjek')?>" placeholder="Subject Message">
+                   <span class="text-danger"><?=form_error('subjek')?></span>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="" class="col-md-2 control-label ">Isi Pesan</label>
                   <div class="col-md-10">
-                   <textarea  class="form-control" id="keterangan" placeholder="Isi Pesan Anda" rows="4"></textarea>
+                   <textarea  class="form-control" id="keterangan" name="keterangan" placeholder="Isi Pesan Anda" rows="4"><?=set_value('keterangan') ?></textarea>
+                   <span class="text-danger"><?=form_error('keterangan') ?></span>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-md-10 col-md-offset-2">
-                     <button type="button" class="btn btn-primary submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+                     <button type="submit" class="btn btn-primary submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
                   </div>
                 </div>
             <?php echo form_close(); ?>

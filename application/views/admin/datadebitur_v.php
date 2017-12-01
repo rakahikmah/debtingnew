@@ -6,10 +6,13 @@
         Data Debitur
       </h1>
     </section>
-
-  
-
-    <!-- Main content -->
+  <?php if ($this->session->flashdata('info')) : ?>
+      <div class="alert alert-success">
+        <i class="icon fa fa-check"></i>
+        <span> Berhasil Mengirim Pesan</span>
+      </div>
+    <?php endif; ?>
+  <!-- Main content -->
     <section class="content container-fluid">
       <div class="row">
         <?php if ($this->session->flashdata('infoinsert')): ?>
@@ -18,13 +21,7 @@
             <h4><i class="icon fa fa-check"></i> Info!</h4>
             Berhasil Mendaftar Debitur
           </div>
-        <?php elseif ($this->session->flashdata('infoedit')): ?>
-          <div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h4><i class="icon fa fa-check"></i> Info!</h4>
-            Berhasil Mengubah Debitur
-          </div>
-         <?php elseif ($this->session->flashdata('infodelete')): ?>  
+        <?php elseif ($this->session->flashdata('infodelete')): ?>  
           <div class="alert alert-success alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
             <h4><i class="icon fa fa-check"></i> Info!</h4>
@@ -33,8 +30,11 @@
         <?php endif ?>
         <div class="col-md-12">
           <div class="box">
+            <br>
+            &nbsp;&nbsp;
+            <a href="<?=site_url('report/reportadmin')?>" class="btn btn-info">Cetak Laporan Pembayaran Debitur</a>
             <div class="box-body">
-              <div class="table-responsive">
+             <div class="table-responsive">
               <table id="datadebitur" class="table  table-hover">
                 <thead>
                 <tr>
@@ -46,13 +46,7 @@
                   <th>No Telepon</th>
                   <th>E-Mail</th>
                   <th>Opsi</th>
-                  <!-- <th>Pekerjaan</th> -->
-                  <!-- <th>Nama Barang</th> -->
-                  <!-- <th>Harga Barang</th> -->
-                  <!-- <th>Cicilan Minimal</th> -->
-                  <!-- <th>Jatuh Tempo</th> -->
                 </tr>
-                 
                 </thead>
                 <tbody>
                    <?php foreach ($fetch_data->result() as $row) :?>
@@ -65,9 +59,7 @@
                           <td><?php echo $row->email;?></td>
                           <td class="col-md-3">
                             <a href="<?php echo base_url("admin/detaildebitur/$row->id_debitur") ?>" class="btn btn-info">Detail</a>
-                           <a href="<?php echo base_url("admin/editdebitur/$row->id_debitur") ?>" class="btn btn-warning">Edit</a>
-
-                           <!--  <button class="btn btn-primary btn-detail" value="<?php echo $row->id_debitur ?>">detail2  </button> -->
+                            <a href="<?php echo base_url("admin/kirimpesan/$row->id_debitur") ?>" class="btn btn-success">Kirim Pesan</a>
                             <a href="<?php echo base_url("admin/bayarangsuran/$row->id_debitur") ?>" class="btn btn-danger">Delete</a>
                           </td>
                         </tr>

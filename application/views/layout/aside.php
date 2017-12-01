@@ -18,23 +18,14 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <?php if ($this->session->userdata('role')=='admin'): ?>
           <li><a href="<?=site_url('admin')?>"><i class="fa fa-home"></i> <span>Home</span></a></li>
           <li><a href="<?=site_url('admin/datadebitur')?>"><i class="fa fa-book"></i> <span>Data Debitur</span></a></li>
           <li><a href="<?=site_url('admin/registerdebitur')?>"><i class="fa fa-plus"></i> <span>Register Debitur</span></a></li>
-          <li><a href="<?=site_url('admin/konfirmasipembayaran')?>"><i class="fa fa-info"></i> <span>Konfirmasi Pembayaran </span></a></li>
+          <li><a href="<?=site_url('admin/konfirmasipembayaran')?>"><i class="fa fa-info"></i> <span>Konfirmasi Pembayaran</span></a></li>
           <li><a href="<?=site_url('admin/inputpembayaran')?>"><i class="fa fa-pencil"></i> <span>Input Pembayaran</span></a></li>
-          <li><a href="<?=site_url('admin/resetdebitur')?>"><i class="fa fa-pencil"></i> <span>Reset Password Debitur</span></a></li>
-          <li><a href="<?=site_url('admin/gantipassword')?>"><i class="fa fa-pencil"></i> <span>Ganti Password</span></a></li>
-        <?php elseif ($this->session->userdata('role')=='debitur'): ?>
-          <li><a href="<?=site_url('debitur')?>"><i class="fa fa-home"></i> <span>Home</span></a></li>
-          <li><a href="<?=site_url('debitur/historypembayaran')?>"><i class="fa fa-book"></i> <span>History Pembayaran </span></a></li>
-          <li><a href="<?=site_url('debitur/uploadbukti')?>"><i class="fa fa-upload"></i> <span> Upload Pembayaran</span></a></li>
-          <li><a href="<?=site_url('debitur/konfirmasipembayaran')?>"><i class="fa fa-pencil"></i> <span>Kirim Pesan </span></a></li>
-          <li><a href="<?=site_url('')?>"><i class="fa fa-envelope"></i> <span>Pesan</span></a></li>
-          <li><a href="<?=site_url('debitur/gantipassword')?>"><i class="fa fa-envelope"></i> <span>Ganti Password</span></a></li>
-        <?php endif; ?>
-        
+          <li><a href="<?=site_url('admin/pesan')?>"><i class="fa fa-envelope"></i> <span>Pesan</span></a></li>
+          <li><a href="<?=site_url('admin/resetdebitur')?>"><i class="fa fa-lock"></i> <span>Reset Password Debitur</span></a></li>
+          <li><a href="<?=site_url('admin/gantipassword')?>"><i class="fa fa-lock"></i> <span>Ganti Password</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

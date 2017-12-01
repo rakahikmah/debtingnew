@@ -6,10 +6,25 @@ class Tester extends CI_Controller {
 
 	public function index()
 	{
-		echo date('Y-m-d');
-		echo "<br>";
-        echo date('Y-m-d',strtotime($this->input->post('tanggal_selesai_bayar')));	
+		// $this->load->library('Pdf');
+		// $data['fetch_data'] = $this->report_model->fetch_data_debitur();
+		// $data['jumlahterbayar'] = $this->report_model->terbayarhutang();
+		// $this->load->view('testpdf_v',$data);
 	}
+
+	// public function waktu()
+	// {
+	// 	date_default_timezone_set("Asia/Jakarta");
+	// 	$time = date("G:i:s");
+	// 	echo $time."<br>";
+	// 	// echo $coba = strtotime($time)+(3600*6);
+	// 	// echo "<br>";
+	// 	// echo date("h:i:s",$coba);
+
+	// 	echo date('Y-m-d');
+	// 	echo "<br>";
+ //        echo date('Y-m-d',strtotime($this->input->post('tanggal_selesai_bayar')));	
+	// }
 
 	/*public function test($id_debitur)
 	{
