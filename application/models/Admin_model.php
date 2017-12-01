@@ -31,6 +31,7 @@ class Admin_model extends CI_Model {
         $this->db->select('SUM(jumlah_bayar) as total');
         $this->db->where('id_debitur',$id_debitur);
         $this->db->from('tb_pembayaran');
+        $this->db->where('status','sudah');
         return $this->db->get()->row()->total;
     }
 
@@ -96,6 +97,14 @@ class Admin_model extends CI_Model {
         $this->db->from("tb_debitur");
         $query=$this->db->get();
         return $query;
+    }
+
+    public function fetch_data_debitur_pesan($id_debitur){
+        $this->db->select("*");
+        $this->db->from("tb_debitur");
+        $this->db->where('id_debitur',$id_debitur);
+        $query=$this->db->get();
+        return $query->row_array();
     }
 
     public function fetch_detail_debitur($id_debitur)
@@ -219,9 +228,49 @@ class Admin_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('tb_pesan_from_debitur');
         $this->db->join('tb_debitur', 'tb_debitur.id_debitur = tb_pesan_from_debitur.id_debitur');
+        $this->db->order_by('waktu','DESC');
         $query = $this->db->get();
         return $query->result_array();
 
+   }
+
+   public function detailpesan($id_debitur,$id_pesan)
+   {
+        $this->db->select('*');
+        $this->db->from('tb_pesan_from_debitur');
+        $this->db->join('tb_debitur','tb_debitur.id_debitur = tb_pesan_from_debitur.id_debitur');
+        $this->db->where('tb_pesan_from_debitur.id_pesan',$id_pesan);
+        $this->db->where('tb_debitur.id_debitur',$id_debitur);
+        $query = $this->db->get();
+        return $query->row_array();
+   }
+
+   public function proses_balas_pesan()
+   {
+        date_default_timezone_set("Asia/Jakarta");
+
+        $data = array (
+            'id_debitur'    =>$this->input->post('id_debitur'),
+            'subjek'        =>$this->input->post('subjek'),
+            'isipesan'      =>$this->input->post('isipesan'),
+            'dari'          =>$this->session->userdata('nama'),
+            'tgl_kirim'   =>date('Y-m-d'),
+            'waktu'         =>date('G:i:s'),
+            'status'        =>'belum'
+        );
+
+        return $this->db->insert('tb_pesan_to_debitur',$data);
+   }
+
+   public function ubahstatusbaca($id_pesan)
+   {
+        $data = array (
+            'status' => 'sudah'
+        );
+
+        $this->db->where('id_pesan',$id_pesan);
+        $this->db->where('status','belum');
+        return $this->db->update('tb_pesan_from_debitur',$data);
    }
 
 }

@@ -40,6 +40,7 @@ class Debitur_model extends CI_Model {
         $this->db->from('tb_pembayaran');
         $this->db->join('tb_debitur','tb_debitur.id_debitur = tb_pembayaran.id_debitur');
         $this->db->where('tb_pembayaran.id_debitur', $this->session->userdata('id_debitur'));
+        $this->db->where('tb_pembayaran.status','sudah');
         $query = $this->db->get();
         return $query->result_array();
     }
@@ -93,6 +94,39 @@ class Debitur_model extends CI_Model {
 
         return $this->db->insert('tb_pesan_from_debitur',$data);
     }
+
+    public function pesanmasuk()
+    {
+        date_default_timezone_set("Asia/Jakarta"); 
+        
+        $this->db->select('*');
+        $this->db->from('tb_pesan_to_debitur');
+        $this->db->join('tb_debitur', 'tb_debitur.id_debitur = tb_pesan_to_debitur.id_debitur');
+        $this->db->where('tb_debitur.id_debitur',$this->session->userdata('id_debitur'));
+        $this->db->order_by('waktu','DESC');
+        $query = $this->db->get();
+        return $query->result_array();
+
+    }
+
+   public function ubahstatusbaca($id_pesan)
+   {
+        $data = array (
+            'status' =>'sudah'
+        );
+
+        $this->db->where('id_pesan',$id_pesan);
+        return $this->db->update('tb_pesan_to_debitur',$data);
+   }
+
+   public function detailpesan($id_pesan)
+   {
+    $this->db->select('*');
+    $this->db->from('tb_pesan_to_debitur');
+    $this->db->where('id_pesan',$id_pesan);
+    $query = $this->db->get();
+    return $query->row_array();
+   }
 
 }
 

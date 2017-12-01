@@ -6,6 +6,12 @@
         Pesan Debitur
       </h1>
     </section>
+    <?php if ($this->session->flashdata('info')) : ?>
+      <div class="alert alert-success">
+        <i class="icon fa fa-check"></i>
+        <span> Berhasil Mengirim Pesan</span>
+      </div>
+    <?php endif; ?>
    
     <!-- Main content -->
     <section class="content container-fluid">
@@ -14,7 +20,6 @@
           <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Pesan Masuk</h3>
-
               <div class="box-tools pull-right">
                 <div class="has-feedback">
                   <input type="text" class="form-control input-sm" placeholder="Search Mail">

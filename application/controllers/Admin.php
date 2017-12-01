@@ -142,30 +142,66 @@ class Admin extends CI_Controller {
 	public function deletedebitur($id_debitur)
 	{
 		$this->admin_model->delete_debitur($id_debitur);
-		$this->session->set_flashdata('infoedit', 'true');
+		$this->session->set_flashdata('infodelete', 'true');
 		redirect(site_url("admin/datadebitur"));
 	}
 
 	public function detailpesan($id_debitur,$id_pesan)
 	{
-		// $data['detailpesan'] =$this->admin_model->detailpesan($id_debitur,$id_pesan);
-		// $this->admin_model->statusbaca($id_pesan);
+		$this->admin_model->ubahstatusbaca($id_pesan);
+		$data['detailpesan'] =$this->admin_model->detailpesan($id_debitur,$id_pesan);
 
 		$this->load->view('layout/header');
 		$this->load->view('layout/aside');
-		$this->load->view('admin/');
+		$this->load->view('admin/detailpesandebitur_v',$data);
 		$this->load->view('layout/footer');
 	}
 
 	public function pesan()
 	{
-		
 		$data["pesanmasuk"] = $this->admin_model->pesanmasuk();
 		
 		$this->load->view('layout/header');
 		$this->load->view('layout/aside');
 		$this->load->view('admin/pesandebitur_v',$data);
 		$this->load->view('layout/footer');
+	}
+
+	public function balas_pesan_debitur($id_debitur)
+	{
+
+		$id_debitur = $this->uri->segment(3);
+		$data["datadebitur"]=$this->admin_model->fetch_data_debitur_pesan($id_debitur);
+
+		$this->load->view('layout/header');
+		$this->load->view('layout/aside');
+		$this->load->view('admin/kirimpesan_v',$data);
+		$this->load->view('layout/footer');
+	}
+
+	public function kirimpesan($id_debitur)
+	{
+		$id_debitur = $this->uri->segment(3);
+		$data["datadebitur"]=$this->admin_model->fetch_data_debitur_pesan($id_debitur);
+
+		$this->load->view('layout/header');
+		$this->load->view('layout/aside');
+		$this->load->view('admin/kirimpesan2_v',$data);
+		$this->load->view('layout/footer');	
+	}
+
+	public function proses_balas_pesan()
+	{
+		$this->admin_model->proses_balas_pesan();
+		$this->session->set_flashdata('info', 'true');
+		redirect('admin/pesan');
+	}
+
+	public function proses_kirim_pesan()
+	{
+		$this->admin_model->proses_balas_pesan();
+		$this->session->set_flashdata('info', 'true');
+		redirect('admin/datadebitur');
 	}
 	
 }

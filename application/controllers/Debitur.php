@@ -82,20 +82,28 @@ class Debitur extends CI_Controller {
 			$this->session->set_flashdata('info','true');
 			redirect('debitur/kirimpesan');
 		}
-
-		
 	}
 
-	public function detaildebitur()
+	public function pesan()
 	{
-		$data['fetch_data']				=$this->admin_model->fetch_detail_debitur($id_debitur);
-		$data['fetch_history_debitur'] 	=$this->admin_model->fetch_history_debitur($id_debitur);
-		$data['pembayarandebitur']      =$this->admin_model->sudahdibayardebitur($id_debitur);
-		
+		$data['pesanmasuk'] = $this->debitur_model->pesanmasuk();
+
 		$this->load->view('debitur/headerdebitur_v');
-		$this->load->view('debitur/detaildebitur_v',$data);
+		$this->load->view('debitur/pesan_v',$data);
 		$this->load->view('home/footer');
 	}
+
+	public function detailpesan($id_pesan)
+	{
+		$this->debitur_model->ubahstatusbaca($id_pesan);
+		$data['detailpesan'] = $this->debitur_model->detailpesan($id_pesan);
+
+		$this->load->view('debitur/headerdebitur_v');
+		$this->load->view('debitur/detailpesan_v',$data);
+		$this->load->view('home/footer');
+	}
+
+	
 }
 
 /* End of file Debitur.php */

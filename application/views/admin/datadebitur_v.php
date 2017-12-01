@@ -6,10 +6,13 @@
         Data Debitur
       </h1>
     </section>
-
-  
-
-    <!-- Main content -->
+  <?php if ($this->session->flashdata('info')) : ?>
+      <div class="alert alert-success">
+        <i class="icon fa fa-check"></i>
+        <span> Berhasil Mengirim Pesan</span>
+      </div>
+    <?php endif; ?>
+  <!-- Main content -->
     <section class="content container-fluid">
       <div class="row">
         <?php if ($this->session->flashdata('infoinsert')): ?>
@@ -18,13 +21,7 @@
             <h4><i class="icon fa fa-check"></i> Info!</h4>
             Berhasil Mendaftar Debitur
           </div>
-        <?php elseif ($this->session->flashdata('infoedit')): ?>
-          <div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h4><i class="icon fa fa-check"></i> Info!</h4>
-            Berhasil Mengubah Debitur
-          </div>
-         <?php elseif ($this->session->flashdata('infodelete')): ?>  
+        <?php elseif ($this->session->flashdata('infodelete')): ?>  
           <div class="alert alert-success alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
             <h4><i class="icon fa fa-check"></i> Info!</h4>
@@ -33,8 +30,11 @@
         <?php endif ?>
         <div class="col-md-12">
           <div class="box">
+            <br>
+            &nbsp;&nbsp;
+            <a href="<?=site_url('report/reportadmin')?>" class="btn btn-info">Cetak Laporan Pembayaran Debitur</a>
             <div class="box-body">
-              <div class="table-responsive">
+             <div class="table-responsive">
               <table id="datadebitur" class="table  table-hover">
                 <thead>
                 <tr>
