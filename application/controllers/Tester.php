@@ -6,10 +6,29 @@ class Tester extends CI_Controller {
 
 	public function index()
 	{
-		// $this->load->library('Pdf');
-		// $data['fetch_data'] = $this->report_model->fetch_data_debitur();
-		// $data['jumlahterbayar'] = $this->report_model->terbayarhutang();
-		// $this->load->view('testpdf_v',$data);
+		
+		$holaa = $this->tester_model->fetch_data_debitur();
+		$jumlahangsuran = 1;
+		foreach ($holaa->result() as $key ) {
+			
+			
+			if ($key->id_pembayaran !=4) {
+				$jumlahangsuran = 1+$jumlahangsuran;
+			}else{
+				break;
+			}
+		}
+
+		echo $jumlahangsuran;
+	
+		
+	}
+
+	public function jumlahpesan()
+	{
+		$data['jumlahpesan'] = $this->tester_model->jumlahpesan();
+
+		$this->load->view('test',$data);
 	}
 
 	// public function waktu()

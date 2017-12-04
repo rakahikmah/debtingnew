@@ -30,9 +30,9 @@
         <?php endif ?>
         <div class="col-md-12">
           <div class="box">
-            <br>
+            <br><!-- 
             &nbsp;&nbsp;
-            <a href="<?=site_url('report/reportadmin')?>" class="btn btn-info">Cetak Laporan Pembayaran Debitur</a>
+            <a href="<?=site_url('report/reportadmin')?>" class="btn btn-info">Cetak Laporan Pembayaran Debitur</a> -->
             <div class="box-body">
              <div class="table-responsive">
               <table id="datadebitur" class="table  table-hover">
@@ -45,6 +45,7 @@
                   <th>Alamat</th>
                   <th>No Telepon</th>
                   <th>E-Mail</th>
+                  <!-- <th>Jatuh Tempo</th> -->
                   <th>Opsi</th>
                 </tr>
                 </thead>

@@ -97,6 +97,16 @@
                             <td><?=date('d-M-Y',strtotime($fetch_data['tanggal_daftar']))?></td>
                           </tr>
                           <tr>
+                            <td>Jatuh Tempo</td>
+                            <td>
+                              <?php if($fetch_data['tipe_pembayaran'] == 7): ?>
+                                Setiap 7 hari
+                              <?php   else:?>
+                               Tiap Tanggal <?=date('d',strtotime($fetch_data['tanggal_daftar']))?>
+                             <?php endif;?> 
+                            </td>
+                          </tr>
+                          <tr>
                             <td>Berakhir</td>
                             <td><?=date('d-M-Y',strtotime($fetch_data['tanggal_selesai']))?></td>
                           </tr>
@@ -120,7 +130,7 @@
                           <tr>
                             <td>Angsuran Ke</td>
                             <td>
-                              <?=$jumlahangsurandebitur?> x
+                              <?=$jumlahangsurandebitur-1?> x
                             </td>
                           </tr>
                           <tr>
@@ -166,7 +176,7 @@
                     <tr>
                       
                       <td><?=$no++?></td>
-                      <td><?=$fetch_history['jumlah_bayar']?></td>
+                      <td>Rp <?=number_format($fetch_history['jumlah_bayar'])?></td>
                       <td><?=date('d-M-Y',strtotime($fetch_history['tgl_bayar']))?></td>
                     </tr>    
                     <?php endforeach ?>

@@ -53,7 +53,7 @@
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="<?php echo base_url('assets/dist/img/user2-160x160.jpg') ?>" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url('assets/dist/img/user-debting.png') ?>" class="img-circle" alt="User Image">
 
                 <p>
                   <?php echo $this->session->userdata('nama'); ?>
