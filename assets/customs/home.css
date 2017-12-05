@@ -4,6 +4,9 @@
 	height: 300px;
 }
 
+.content-isi{
+	padding: 150px 0px;
+}
 .geseraboutkanan{
 	padding-left: 50px;
 }
@@ -13,13 +16,26 @@
 }
 .header-image{
 	padding: 221px 0px;
-	background:url(../img/profile/buku.jpeg) no-repeat center center fixed;
+	background:url(../img/profile/buku.png) no-repeat center center fixed;
     background-size: cover;
-    color:#1A1927;
     width: 100%;
 }
+.header-image h1,.header-image h2{
+	color:white;
+	font-weight: bold;
+    font-family:helvetica !important;
+}
+.dropdown-menu li a.signout{
+	color:red;
+	text-align: center;
+}
+.dropdown-menu li a.signout:hover{
+	color:white;
+	background-color: #dc3545;
+}
 a.login-btn{
-	padding:0 30px;
+	margin-top:20px;
+	padding:0 40px;
 	font-size:30px; 
 }
 .about-us{

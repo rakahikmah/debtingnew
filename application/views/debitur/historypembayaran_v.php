@@ -1,7 +1,7 @@
   <!-- Content Wrapper. Contains page content -->
   
     <!-- Content Header (Page header) -->
-    <div class="isi" style="padding: 150px 0px;">
+    <div class="isi content-isi">
     <section class="content-header">
       <h1 align="center">
         History Pembayaran

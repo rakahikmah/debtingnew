@@ -6,7 +6,7 @@
       </h1>
     </section>
     <!-- Main content -->
-    <section class="content container" style="padding: 150px 0px;">
+    <section class="container content-isi">
      <div class="row">
         <!-- ./col -->
         <div class="col-md-4">
