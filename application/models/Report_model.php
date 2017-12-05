@@ -31,13 +31,27 @@ class Report_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('tb_pembayaran');
         $this->db->where('id_pembayaran',$id_pembayaran);
+        $this->db->where('status','sudah');
         $query = $this->db->get();
         return $query->row_array();
     }
 
-    public function detaildebitur()
+    public function detaildebitur($id_debitur)
     {
-    	
+    	$this->db->select('*');
+        $this->db->from('tb_debitur');
+        $this->db->where('id_debitur',$id_debitur);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
+
+    public function detailbarang($id_barang)
+    {
+        $this->db->select('*');
+        $this->db->from('tb_pembayaran');
+        $this->db->join('tb_barang','tb_barang.id_barang = tb_pembayaran.id_barang');
+        $query = $this->db->get();
+        return $query->row_array();
     }
 
 }

@@ -128,6 +128,34 @@ class Debitur_model extends CI_Model {
     return $query->row_array();
    }
 
+   public function gantipassword()
+   {
+        $data = array (
+            'password'=>$this->input->post('passwordbaru'),
+        );
+        $this->db->where('id_debitur',$this->session->userdata('id_debitur'));
+        return $this->db->update('tb_debitur',$data);
+   }
+
+   public function detaildebitur()
+    {
+        $this->db->select("*");
+        $this->db->from('tb_debitur');
+        $this->db->where('id_debitur',$this->session->userdata('id_debitur'));
+        $query = $this->db->get();
+        return $query->row_array();
+    }
+
+
+    public function jumlahpesan()
+    {
+        $this->db->select("*");
+        $this->db->from('tb_pesan_to_debitur');
+        $this->db->where('id_debitur',$this->session->userdata('id_debitur'));
+        $this->db->where('status','belum');
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
 }
 
 /* End of file Admin_model.php */

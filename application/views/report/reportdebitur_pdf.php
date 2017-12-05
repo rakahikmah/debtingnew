@@ -63,21 +63,62 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
-$pdf->SetFont('times', 'B', 12);
+$pdf->SetFont('times', 12);
 
 // add a page
 $pdf->AddPage();
+// setting variabel debitur
 
-$nama ="raka";
+$id_debitur         = $detaildebitur['id_debitur'];
+$nama               = $detaildebitur['nama'];
+$email              = $detaildebitur['email'];
+$tanggal_bayar      = date('d-M-Y',strtotime($historybayar['tgl_bayar']));
+$jumlah_bayar       = number_format($historybayar['jumlah_bayar']);
+$nama_barang        = $detailbarang['nama_barang'];
+$total_hargabarang  = number_format($detailbarang['total_hargabarang']);
 
-$html = '<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>';
 
-$html .='Nama Barang'.$fetch_data[""].'asdd';
+$html = '<!DOCTYPE html><html><head><title></title></head><body>';
+
+$html .='<br><br><br><br>';
+$html .='<table cellspacing="20">';
+$html .='<tr>';
+$html .='<td>Id Debitur  </td><td>:'.$id_debitur.'</td>';
+$html .='</tr>';
+
+$html .='<tr>';
+$html .='<td>Nama Debitur  </td><td>:'.$nama.'</td>';
+$html .='</tr>';
+
+$html .='<tr>';
+$html .='<td>Email  </td><td>:'.$email.'</td>';
+$html .='</tr>';
+
+$html .='<tr>';
+$html .='<td>Nama Barang </td><td>:'.$nama_barang.'</td>';
+$html .='</tr>';
+
+$html .='<tr>';
+$html .='<td>Total Harga Barang  </td><td>:Rp '.$total_hargabarang.'</td>';
+$html .='</tr>';
+
+$html .='<tr>';
+$html .='<td>Tanggal Bayar  </td><td>:'.$tanggal_bayar.'</td>';
+$html .='</tr>';
+
+$html .='<tr>';
+$html .='<td>Jumlah Bayar  </td><td>:Rp '.$jumlah_bayar.'</td>';
+$html .='</tr>';
+
+$html .='<tr>';
+$html .='<td>Angsuran Ke  </td><td>:'.$angsuran_ke.'</td>';
+$html .='</tr>';
+
+$html .='<br><br><br><br><br><br><br><br><br><br><br><br><br>';
+$html .='Demikian ini adalah bukti pembayaran angsuran yang sah (resmi) dari pihak kreditur'; 
+$html .='<br><br><br><br><br>';
+$html .='<p align="right">Mengetahui</p>';
+$html .='<p align="right">Kreditur</p>';
 
 $html .='</body></html>';
 

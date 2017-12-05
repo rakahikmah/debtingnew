@@ -23,7 +23,9 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('home/header');
 		$this->load->view('login/loginform_v');	
+		$this->load->view('home/footer');
 	}
 
 	public function validationlogin()

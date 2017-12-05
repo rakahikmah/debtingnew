@@ -19,19 +19,21 @@ class Admin extends CI_Controller {
 		$data['jumlahdebitur'] 			= $this->admin_model->jumlahdebitur();
 		$data['seluruhhargabarang']		= $this->admin_model->seluruhpiutang();
 		$data['terbayarhutang']			= $this->admin_model->terbayarhutang();
+		$data['jumlahpesan']			= $this->admin_model->jumlahpesan();
 
 		$this->load->view('layout/header');
-		$this->load->view('layout/aside');
+		$this->load->view('layout/aside',$data);
 		$this->load->view('admin/dashboard_v',$data);
 		$this->load->view('layout/footer');
 	}
 
 	public function datadebitur()
 	{
-		$data['fetch_data']=$this->admin_model->fetch_data_debitur();
-		
+		$data['fetch_data']				=$this->admin_model->fetch_data_debitur();
+		$data['jumlahpesan']			= $this->admin_model->jumlahpesan();
+
 		$this->load->view('layout/header');
-		$this->load->view('layout/aside');
+		$this->load->view('layout/aside',$data);
 		$this->load->view('admin/datadebitur_v',$data);
 		$this->load->view('layout/footer');
 	}
@@ -42,9 +44,10 @@ class Admin extends CI_Controller {
 		$data['fetch_history_debitur'] 	=$this->admin_model->fetch_history_debitur($id_debitur);
 		$data['pembayarandebitur']      =$this->admin_model->sudahdibayardebitur($id_debitur);
 		$data['jumlahangsurandebitur']  =$this->admin_model->jumlahangsurandebitur($id_debitur);
+		$data['jumlahpesan']			= $this->admin_model->jumlahpesan();
 
 		$this->load->view('layout/header');
-		$this->load->view('layout/aside');
+		$this->load->view('layout/aside',$data);
 		$this->load->view('admin/detaildebitur_v',$data);
 		$this->load->view('layout/footer');
 	}
@@ -52,9 +55,10 @@ class Admin extends CI_Controller {
 	public function konfirmasipembayaran()
 	{
 		$data['fetch_data']	= $this->admin_model->fetch_konfirmasi_pembayaran();
+		$data['jumlahpesan']			= $this->admin_model->jumlahpesan();
 
-		$this->load->view('layout/header');
-		$this->load->view('layout/aside');
+		$this->load->view('layout/header');		
+		$this->load->view('layout/aside',$data);
 		$this->load->view('admin/konfirmasipembayaran_v',$data);
 		$this->load->view('layout/footer');
 	}
@@ -69,33 +73,35 @@ class Admin extends CI_Controller {
 
 	public function inputpembayaran()
 	{
-		$data['fetch_data']=$this->admin_model->fetch_data_debitur();
-
+		$data['fetch_data']				=$this->admin_model->fetch_data_debitur();
+		$data['jumlahpesan']			= $this->admin_model->jumlahpesan();
 		$this->load->view('layout/header');
-		$this->load->view('layout/aside');
+		$this->load->view('layout/aside',$data);
 		$this->load->view('admin/datadebiturbayar_v',$data);
 		$this->load->view('layout/footer');
 	}
 
 	public function bayarcicilan()
 	{
+		$data['jumlahpesan']			= $this->admin_model->jumlahpesan();
+
 		$this->load->view('layout/header');
-		$this->load->view('layout/aside');
+		$this->load->view('layout/aside',$data);
 		$this->load->view('admin/formpembayaran_v');
 		$this->load->view('layout/footer');
 	}
 
 	public function bayarangsurandebitur($id_debitur = false)
 	{
-		$data['fetch_data'] = $this->admin_model->fetch_detail_debitur($id_debitur);
-
+		$data['fetch_data'] 			= $this->admin_model->fetch_detail_debitur($id_debitur);
+		$data['jumlahpesan']			= $this->admin_model->jumlahpesan();
 		if ($id_debitur == NULL) {
 			$this->admin_model->bayarangsurandebitur();
 			$this->session->set_flashdata('info','true');
 			redirect('admin/inputpembayaran');
 		}else{
 			$this->load->view('layout/header');
-			$this->load->view('layout/aside');
+			$this->load->view('layout/aside',$data);
 			$this->load->view('admin/formpembayaran_v',$data);
 			$this->load->view('layout/footer');
 		}
@@ -123,16 +129,19 @@ class Admin extends CI_Controller {
 		$this->form_validation->set_rules('tanggal_daftar', 'Tanggal Daftar', 'required', array('required' =>'Tanggal Daftar Belum Selesai'));
 
 		if($this->form_validation->run() == FALSE) {
-			$data['kddebitur'] = $this->admin_model->getkodedebitur();
-			$data['kdbarang']  = $this->admin_model->getkodebarang();
+			$data['kddebitur']			    = $this->admin_model->getkodedebitur();
+			$data['kdbarang']  				= $this->admin_model->getkodebarang();
+			$data['jumlahpesan']			= $this->admin_model->jumlahpesan();
+
 			$this->load->view('layout/header');
-			$this->load->view('layout/aside');
+			$this->load->view('layout/aside',$data);
 			$this->load->view('admin/registerdebitur_v',$data);
 			$this->load->view('layout/footer');
 		} else {
 			$this->admin_model->insert_data_debitur();
 			$this->admin_model->insert_barang();
 			$this->admin_model->insert_pembayaran_dp();
+			$this->admin_model->pesanpertamadebitur();
 			$this->session->set_flashdata('infoinsert', 'true');
 			redirect(site_url("admin/datadebitur"));
 		}
@@ -149,20 +158,22 @@ class Admin extends CI_Controller {
 	public function detailpesan($id_debitur,$id_pesan)
 	{
 		$this->admin_model->ubahstatusbaca($id_pesan);
-		$data['detailpesan'] =$this->admin_model->detailpesan($id_debitur,$id_pesan);
+		$data['detailpesan'] 			=$this->admin_model->detailpesan($id_debitur,$id_pesan);
+		$data['jumlahpesan']			= $this->admin_model->jumlahpesan();
 
 		$this->load->view('layout/header');
-		$this->load->view('layout/aside');
+		$this->load->view('layout/aside',$data);
 		$this->load->view('admin/detailpesandebitur_v',$data);
 		$this->load->view('layout/footer');
 	}
 
 	public function pesan()
 	{
-		$data["pesanmasuk"] = $this->admin_model->pesanmasuk();
-		
+		$data["pesanmasuk"] 			= $this->admin_model->pesanmasuk();
+		$data['jumlahpesan']			= $this->admin_model->jumlahpesan();
+
 		$this->load->view('layout/header');
-		$this->load->view('layout/aside');
+		$this->load->view('layout/aside',$data);
 		$this->load->view('admin/pesandebitur_v',$data);
 		$this->load->view('layout/footer');
 	}
@@ -170,22 +181,24 @@ class Admin extends CI_Controller {
 	public function balas_pesan_debitur($id_debitur)
 	{
 
-		$id_debitur = $this->uri->segment(3);
-		$data["datadebitur"]=$this->admin_model->fetch_data_debitur_pesan($id_debitur);
+		$id_debitur 					= $this->uri->segment(3);
+		$data["datadebitur"]			=$this->admin_model->fetch_data_debitur_pesan($id_debitur);
+		$data['jumlahpesan']			= $this->admin_model->jumlahpesan();
 
 		$this->load->view('layout/header');
-		$this->load->view('layout/aside');
+		$this->load->view('layout/aside',$data);
 		$this->load->view('admin/kirimpesan_v',$data);
 		$this->load->view('layout/footer');
 	}
 
 	public function kirimpesan($id_debitur)
 	{
-		$id_debitur = $this->uri->segment(3);
-		$data["datadebitur"]=$this->admin_model->fetch_data_debitur_pesan($id_debitur);
+		$id_debitur 					= $this->uri->segment(3);
+		$data["datadebitur"]			=$this->admin_model->fetch_data_debitur_pesan($id_debitur);
+		$data['jumlahpesan']			= $this->admin_model->jumlahpesan();
 
 		$this->load->view('layout/header');
-		$this->load->view('layout/aside');
+		$this->load->view('layout/aside',$data);
 		$this->load->view('admin/kirimpesan2_v',$data);
 		$this->load->view('layout/footer');	
 	}
@@ -202,6 +215,47 @@ class Admin extends CI_Controller {
 		$this->admin_model->proses_balas_pesan();
 		$this->session->set_flashdata('info', 'true');
 		redirect('admin/datadebitur');
+	}
+
+	public function resetdebitur()
+	{
+		$data['fetch_data']		=$this->admin_model->fetch_data_debitur();
+		$data['jumlahpesan']	= $this->admin_model->jumlahpesan();
+		$this->load->view('layout/header');
+		$this->load->view('layout/aside',$data);
+		$this->load->view('admin/datadebiturreset_v',$data);
+		$this->load->view('layout/footer');
+	}
+
+	public function prosesresetpassword($id_debitur)
+	{
+		$where = array(
+				'id_debitur'=>$id_debitur
+			);
+		$result = $this->db->get_where('tb_debitur',$where)->row_array();
+		$this->admin_model->resetdebitur($id_debitur,$result['no_telp']);
+		$this->session->set_flashdata('info',$result['nama']);
+		redirect('admin/resetdebitur');
+	}
+
+	public function gantipassword()
+	{
+		$this->form_validation->set_rules('passwordbaru', 'passwordbaru', 'trim|required|min_length[8]|alpha_numeric');
+		$this->form_validation->set_rules('confirmpassword','confirmpassword','trim|required|matches[passwordbaru]');
+		$data['jumlahpesan']	= $this->admin_model->jumlahpesan();
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('layout/header');
+			$this->load->view('layout/aside',$data);
+			$this->load->view('admin/gantipassword_v');
+			$this->load->view('layout/footer');
+		} else {
+			$this->admin_model->gantipassword();
+			$this->session->set_flashdata('info', 'true');
+			redirect('admin/gantipassword');
+		}
+
+		
 	}
 	
 }

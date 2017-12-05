@@ -36,14 +36,26 @@
         <li class="<?php if($this->uri->segment(2)=="uploadbukti"){echo "active";}?>" ><a href="<?=site_url('debitur/uploadbukti');?>"><span class="glyphicon glyphicon-upload"></span> Unggah Pembayaran</a></li>
         <li class="<?php if($this->uri->segment(2)=="historypembayaran"){echo "active";}?>"><a class="navtab" href="<?=site_url('debitur/historypembayaran');?>"><span class="glyphicon glyphicon-time"></span> Riwayat Transaksi</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span><?=$this->session->userdata('nama')?><span class="caret"></span></a>
+          <?php if ($jumlahpesan > 0): ?>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span><?=$this->session->userdata('nama')?>&nbsp;&nbsp;&nbsp;<span style="color:white; background: red;"> <?=$jumlahpesan?></span>&nbsp;&nbsp;&nbsp;<span class="caret"></span></a>
+          <?php else: ?>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span><?=$this->session->userdata('nama')?><span class="caret"></span></a> 
+          <?php endif ?>
           <ul class="dropdown-menu">
-            <li><a href="<?php echo site_url('debitur/pesan') ?>">Pesan</a></li>
+            <li>
+                <?php if ($jumlahpesan > 0): ?>
+                  <a href="<?php echo site_url('debitur/pesan') ?>">Pesan &nbsp;&nbsp;&nbsp; 
+                      <small><span class="btn btn-danger"><?=$jumlahpesan?></span></small></a>
+                 <?php else: ?>
+                       <a href="<?php echo site_url('debitur/pesan') ?>">Pesan</a>  
+                <?php endif ?>
+            </li>
             <li><a href="<?php echo site_url('debitur/kirimpesan') ?>">Kirim Pesan</a></li>
-            <li><a href="#">Detail Profile</a></li>
+            <li><a href="<?php echo site_url('debitur/detaildebitur')?>">Detail Profile</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Ganti Password</a></li>
+            <li><a href="<?php echo site_url('debitur/gantipassword') ?>">Ganti Password</a></li>
             <li><a class="signout" href="<?php echo site_url('login?logout=signout')?>">LOG OUT</a></li>
+
           </ul>
         </li>
       </ul>

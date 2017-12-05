@@ -23,7 +23,9 @@ class Resetpassword extends CI_Controller {
 		$this->form_validation->set_rules('confirmpassword','confirmpassword','trim|required|matches[password]');
 
 		if ($this->form_validation->run() === FALSE) {
+			$this->load->view('home/header');
 			$this->load->view('login/resetform_v');
+			$this->load->view('home/footer');
 		} else {
 			$id_debitur = $this->session->userdata('id_debitur');
 			$this->debitur_model->reset_password_debitur($id_debitur);

@@ -42,7 +42,7 @@
             <div class="icon">
               RP
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="" class="small-box-footer">
               More info <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
@@ -59,7 +59,7 @@
             <div class="icon">
               RP
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="" class="small-box-footer">
               More info <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
@@ -75,7 +75,7 @@
             <div class="icon">
               RP
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="" class="small-box-footer">
               More info <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
@@ -94,7 +94,7 @@
             <div class="icon">
               <i class="ion ion-close-round"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="" class="small-box-footer">
               More info <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
@@ -109,7 +109,7 @@
             <div class="icon">
               <i class="ion ion-checkmark-round"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="" class="small-box-footer">
               More info <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>

@@ -44,6 +44,8 @@ class Admin_model extends CI_Model {
     }
 
     public function insert_data_debitur(){
+            
+            
             $data = array(
                 "id_debitur"            =>$this->input->post("id_debitur"),
                 "username"              =>$this->input->post("username"),
@@ -56,7 +58,28 @@ class Admin_model extends CI_Model {
                 "pekerjaan"             =>$this->input->post("pekerjaan"),
                 "role"                  =>"debitur",
             );
+
+             
+
         return $this->db->insert("tb_debitur",$data);
+       
+    }
+
+    public function pesanpertamadebitur()
+    {
+            date_default_timezone_set("Asia/Jakarta");
+             $isipesan = "Haloo ".$this->input->post('nama')." Selamat anda telah berhasil terdaftar sebagai debitur
+                        untuk hal yang ingin ditanyakan silakan hubungin admin/kreditur melalui kirim pesan Terima Kasih";     
+            $data = array(
+                'id_debitur'           =>$this->input->post("id_debitur"),
+                'subjek'               =>'Selamat Datang',
+                'isipesan'             =>$isipesan,
+                'dari'                 =>$this->session->userdata('nama'),
+                'tgl_kirim'            =>date('Y-m-d'),
+                'waktu'                =>date('G:i:s'),
+                'status'               =>'belum'
+            );
+            return $this->db->insert("tb_pesan_to_debitur",$data);
     }
 
     public function insert_barang(){
@@ -272,6 +295,33 @@ class Admin_model extends CI_Model {
         $this->db->where('status','belum');
         return $this->db->update('tb_pesan_from_debitur',$data);
    }
+
+   public function resetdebitur($id_debitur,$no_telp)
+   {
+        $data = array(
+            'password'=>$no_telp
+        );
+        $this->db->where('id_debitur',$id_debitur);
+        return $this->db->update('tb_debitur',$data);
+   }
+
+   public function gantipassword()
+   {
+        $data = array (
+            'password'=>$this->input->post('passwordbaru'),
+        );
+        $this->db->where('id_debitur',$this->session->userdata('id_debitur'));
+        return $this->db->update('tb_debitur',$data);
+   }
+
+   public function jumlahpesan()
+    {
+        $this->db->select("*");
+        $this->db->from('tb_pesan_from_debitur');
+        $this->db->where('status','belum');
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
 
 }
 
