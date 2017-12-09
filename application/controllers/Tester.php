@@ -4,32 +4,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tester extends CI_Controller {
 
-	public function index()
+	public function lunas()
 	{
-		
-		$holaa = $this->tester_model->fetch_data_debitur();
-		$jumlahangsuran = 1;
-		foreach ($holaa->result() as $key ) {
-			
-			
-			if ($key->id_pembayaran !=4) {
-				$jumlahangsuran = 1+$jumlahangsuran;
-			}else{
-				break;
-			}
-		}
+		$data['jumlahlunas'] = $this->tester_model->jumlahlunas();
+		$this->load->view('test', $data);
+	}
 
-		echo $jumlahangsuran;
+	// public function index()
+	// {
+		
+	// 	$holaa = $this->tester_model->fetch_data_debitur();
+	// 	$jumlahangsuran = 1;
+	// 	foreach ($holaa->result() as $key ) {
+			
+			
+	// 		if ($key->id_pembayaran !=4) {
+	// 			$jumlahangsuran = 1+$jumlahangsuran;
+	// 		}else{
+	// 			break;
+	// 		}
+	// 	}
+
+	// 	echo $jumlahangsuran;
 	
 		
-	}
+	// }
 
-	public function jumlahpesan()
-	{
-		$data['jumlahpesan'] = $this->tester_model->jumlahpesan();
+	// public function jumlahpesan()
+	// {
+	// 	$data['jumlahpesan'] = $this->tester_model->jumlahpesan();
 
-		$this->load->view('test',$data);
-	}
+	// 	$this->load->view('test',$data);
+	// }
 
 	// public function waktu()
 	// {

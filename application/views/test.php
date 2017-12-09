@@ -1,6 +1,10 @@
 <?php 	
 
 
-echo $jumlahpesan;
+foreach ($jumlahlunas->result() as $jum) {
+	echo $jum->jumlah_bayar;
+	
+}
+
 
  ?>
