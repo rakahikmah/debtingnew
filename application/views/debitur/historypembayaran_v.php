@@ -30,7 +30,7 @@
                       <td><?=$no?></td>
                       <td>Rp<?=number_format($pembayaran['jumlah_bayar'])?></td>
                       <td><?=date('d-M-Y',strtotime($pembayaran['tgl_bayar']))?></td>
-                      <td><a href="<?=site_url("report/reportdebitur/$pembayaran[id_pembayaran]/$pembayaran[id_barang]/$no")?>" class="btn btn-info">cetak</a></td>
+                      <td><a href="<?=site_url("report/reportdebitur/$pembayaran[id_pembayaran]/$pembayaran[id_barang]/$no")?>" class="btn btn-info"><b>CETAK</b></a></td>
                     </tr>
                     <?php $no++ ?>     
                   <?php endforeach ?>   

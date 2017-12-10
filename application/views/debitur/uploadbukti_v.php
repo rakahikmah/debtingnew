@@ -1,7 +1,7 @@
 
 <div class="container margin-jumbroton">
+  <h2 align="center">Upload Bukti Pembayaran</h2>
   <div class="jumbotron">
-    <h2 align="center">Upload Bukti Pembayaran</h2>
     <?php if ($this->session->flashdata('info')): ?>
             <div class="alert alert-success alert-dismissible">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -22,14 +22,14 @@
           </div>
           <div class="form-group">
             <label for="" class="col-md-2 control-label">Id Debitur</label>
-            <div class="col-md-10">
-              <input type="text" name="id_debitur" class="form-control" value="<?=$detaildata['id_debitur']?>" readonly>
+            <div class="col-md-2">
+              <input type="text" name="id_debitur" id="id_debitur" style="font-weight: bold;" class="form-control" value="<?=$detaildata['id_debitur']?>" readonly>
             </div>
           </div>
            <div class="form-group">
             <label for="" class="col-md-2 control-label">Nama Debitur</label>
-            <div class="col-md-10">
-              <input type="text" name="nama" class="form-control" value="<?=$detaildata['nama']?>" readonly>
+            <div class="col-md-4">
+              <input type="text" name="nama" id="namadebitur" style="font-weight: bold;" class="form-control" value="<?=$detaildata['nama']?>" readonly>
             </div>
           </div>
           <div class="form-group">

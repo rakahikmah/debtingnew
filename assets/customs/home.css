@@ -1,3 +1,23 @@
+.navbar{
+	margin-bottom: 0;
+	border-radius: 0;
+	border: 0;
+	font-size: 1.2em;
+}
+.navbar-brand,
+  .navbar-nav li a {
+      line-height: 60px;
+      height: 60px;
+      padding-top: 0;
+  }
+.navbar-default .navbar-nav>.active>a{
+	color: white;
+	background-color: #3c8dbc;
+}
+.navbar-default .navbar-nav>li>a:hover{
+	color:white;
+	background-color: #3c8dbc;
+}
 .container1 {
 	background-color: #37AAF5 !important;
 	width: 100%;
@@ -5,7 +25,7 @@
 }
 
 .content-isi{
-	padding: 150px 0px;
+	padding: 169px 0px;
 }
 .geseraboutkanan{
 	padding-left: 50px;
@@ -26,12 +46,12 @@
     font-family:helvetica !important;
 }
 .dropdown-menu li a.signout{
-	color:red;
+	color:red !important;
 	text-align: center;
 }
 .dropdown-menu li a.signout:hover{
-	color:white;
-	background-color: #dc3545;
+	color:white !important;
+	background-color: #dc3545 !important;
 }
 a.login-btn{
 	margin-top:20px;
@@ -50,12 +70,20 @@ a.login-btn{
 a#tombol{
 	color:white;
 }
-
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-  background-color: #87b5ff;
-}
+/* history pembayaran */
 .table tr,th {
    text-align: center;   
+}
+/* unggah pembayaran */
+/* input[name=id_debitur],input[name=nama]{
+	font-weight: bold;
+}
+ */
+
+ /* pesan */
+
+b.pesandari{
+	font-size: 50px;
 }
 
 @media (max-width: 991px){
@@ -64,12 +92,8 @@ a#tombol{
 	}
 }
 
-.navbar-brand,
-  .navbar-nav li a {
-      line-height: 60px;
-      height: 60px;
-      padding-top: 0;
-  }
+
+
 
 .margin-jumbroton{
 	margin-top: 90px;
