@@ -1,7 +1,7 @@
   <!-- Content Wrapper. Contains page content -->
   
     <!-- Content Header (Page header) -->
-    <div class="isi" style="padding: 150px 0px;">
+    <div class="isi content-isi">
     <section class="content-header">
       <h1 align="center">
         History Pembayaran
@@ -30,7 +30,7 @@
                       <td><?=$no?></td>
                       <td>Rp<?=number_format($pembayaran['jumlah_bayar'])?></td>
                       <td><?=date('d-M-Y',strtotime($pembayaran['tgl_bayar']))?></td>
-                      <td><a href="<?=site_url("report/reportdebitur/$pembayaran[id_pembayaran]/$pembayaran[id_barang]/$no")?>" class="btn btn-info">cetak</a></td>
+                      <td><a href="<?=site_url("report/reportdebitur/$pembayaran[id_pembayaran]/$pembayaran[id_barang]/$no")?>" class="btn btn-info"><b>CETAK</b></a></td>
                     </tr>
                     <?php $no++ ?>     
                   <?php endforeach ?>   

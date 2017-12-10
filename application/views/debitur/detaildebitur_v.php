@@ -13,7 +13,7 @@
             <b>Nama Lengkap</b>
           </div>
           <div class="col-md-7">
-            <b><?=$detaildebitur['nama']?></b>
+            <?=$detaildebitur['nama']?>
           </div>
         </div>
         <div class="col-md-6">
@@ -21,7 +21,7 @@
             <b>Username</b>
           </div>
           <div class="col-md-7">
-            <b><?=$detaildebitur['username']?></b>
+          <?=$detaildebitur['username']?>
           </div>
         </div>
       </div><br>
@@ -31,7 +31,7 @@
             <b>NIK</b>
           </div>
           <div class="col-md-7">
-            <b><?=$detaildebitur['nik']?></b>
+            <?=$detaildebitur['nik']?>
           </div>
         </div>
         <div class="col-md-6">
@@ -39,7 +39,7 @@
             <b>Alamat</b>
           </div>
           <div class="col-md-7">
-            <b><?=$detaildebitur['alamat']?></b>
+            <?=$detaildebitur['alamat']?>
           </div>
         </div>
       </div><br>
@@ -49,7 +49,7 @@
             <b>Nomor Telepon</b>
           </div>
           <div class="col-md-7">
-            <b><?=$detaildebitur['no_telp']?></b>
+            <?=$detaildebitur['no_telp']?>
           </div>
         </div>
         <div class="col-md-6">
@@ -57,7 +57,7 @@
             <b>Pekerjaan</b>
           </div>
           <div class="col-md-7">
-            <b><?=$detaildebitur['pekerjaan']?></b>
+          <?=$detaildebitur['pekerjaan']?>
           </div>
         </div>
       </div><br>

@@ -3,8 +3,8 @@
  <div class="container-fluid header-image">		
 	  <div class="container">
 	  	<center>
-	    <h2>Debting</h2>
-	    <h3>The Mage Of Debt</h3>
+	    <h1>Debting</h1>
+	    <h2>The Mage Of Debt</h2>
 	    <?php if ($this->session->has_userdata('role')): ?>
               <?php if ($this->session->userdata('role') =='admin'): ?>
                 <a href="<?=site_url('admin')?>" class="btn btn-primary login-btn"><?=$this->session->userdata('nama')?></a>

@@ -16,6 +16,14 @@
                 <div class="box-body no-padding">
                   <div class="table-responsive mailbox-messages">
                     <table class="table table-hover table-striped">
+                      <thead>
+                      <tr>
+                        <th><b>Dari</b></th>
+                        <th>Judul</th>
+                        <th>Date</th>
+                        <th>Jam</th>
+                      </tr>
+                      </thead>
                       <?php foreach ($pesanmasuk as $pesan): ?>
                      <tr
                         <?php if ($pesan['status'] == 'belum'): ?>

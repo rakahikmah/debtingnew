@@ -14,16 +14,7 @@
 	      	</tr>
 	      </table>
   		</div>
-  		<div class="col-md-4">
-	      <h3 align="center">Social Media</h3>
-	      <div align="center">
-	      	<i class="fa fa-facebook fa-5x" aria-hidden="true"></i> &nbsp;&nbsp;
-		    <i class="fa fa-twitter fa-5x" aria-hidden="true"></i> &nbsp;&nbsp;
-		    <i class="fa fa-google-plus fa-5x" aria-hidden="true"></i>
-	      </div>
-	      
-  		</div> 
-  		<div class="col-md-4">
+  		<div class="col-md-8">
 	   	  <h3 align="center">Lorem Ipsum</h3>
 	   	  <p align="justifiy">
 	   	  	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam animi saepe iste quas accusamus magnam, molestias voluptas suscipit! Id consequatur iste placeat aspernatur pariatur nisi doloremque quo tempore ipsa distinctio.

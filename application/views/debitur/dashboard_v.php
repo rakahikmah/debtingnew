@@ -1,12 +1,8 @@
 <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-      </h1>
-    </section>
+    
     <!-- Main content -->
-    <section class="content container" style="padding: 150px 0px;">
+    <section class="container content-isi">
      <div class="row">
         <!-- ./col -->
         <div class="col-md-4">

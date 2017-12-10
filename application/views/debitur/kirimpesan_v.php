@@ -44,7 +44,7 @@
                      <button type="submit" class="btn btn-primary submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
                   </div>
                 </div>
-            <?php echo form_close() ?>
+            <?php echo form_close(); ?>
           </div>
         </div>
     </div>
