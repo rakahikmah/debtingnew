@@ -9,7 +9,7 @@ class MYPDF extends TCPDF {
         // Set font
         $this->SetFont('helvetica', 'B', 15);
         // Title
-        $this->Cell(0, 15, 'Laporan Pemasukan '.date('d-M-Y'), 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(0, 15, 'Laporan Pemasukan Debitur', 0, false, 'C', 0, '', 0, false, 'M', 'M');
     }
 
     // Page footer
@@ -77,31 +77,52 @@ $html = '<!DOCTYPE html>
 </head>
 <body>';
 
-$html .='<table>
+$html .='<table align=center>
+          <tr>
+            <td>Nama</td>
+            <td>'.$detaildebitur["nama"].'</td>
+          </tr>
+          <tr>
+            <td>Alamat</td>
+            <td>'.$detaildebitur["alamat"].'</td>
+          </tr>
+          <tr>
+            <td>Nomor Telepon</td>
+            <td>'.$detaildebitur["no_telp"].'</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>'.$detaildebitur["email"].'</td>
+          </tr>
+          <tr>
+            <td>Pekerjaan</td>
+            <td>'.$detaildebitur["pekerjaan"].'</td>
+          </tr>';
+$html .='</table>';
+$html .='<br><br><br><br>';
+$no = 1;
+$html .='<table cellspacing="0" cellpadding="1" border="1" >
             <tr>
                 
                 <th>Tanggal Bayar</th>
-                <th>Id Debitur</th>
-                <th>Nama</th>
-                <th>Jumlah Barang</th>
+                <th>Jumlah Bayar</th>
+                <th>Angrusan</th>
             </tr>   
         ';
 
-foreach ($fetch_data as $detail_v) {
+foreach ($historypembayaran as $detail_v) {
     $html .='
         <tr>
             
             <td>'.date('d-M-Y',strtotime($detail_v['tgl_bayar'])).'</td>
-            <td>'.$detail_v["id_debitur"].'</td>
-            <td>'.$detail_v["nama"].'</td>
             <td>Rp '.number_format($detail_v["jumlah_bayar"]).'</td>
+            <td>'.$no++.'X</td>
         </tr>
     ';
 }
 
 $html .='</table>';
 $html .='<br><br><br><br><br><br>';
-$html .='Jumlah Terbayar Oleh Debitur<u> Rp'.number_format($jumlahterbayar).'</u>.';
 $html .='</body></html>';
 
 // output the HTML content

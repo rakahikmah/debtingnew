@@ -54,6 +54,16 @@ class Report_model extends CI_Model {
         return $query->row_array();
     }
 
+    public function historypembayaran_per_debitur($id_debitur)
+    {
+        $this->db->select('*');
+        $this->db->from('tb_pembayaran');
+        $this->db->where('id_debitur',$id_debitur);
+        $this->db->where('status','sudah');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
 }
 
 /* End of file Report_model.php */

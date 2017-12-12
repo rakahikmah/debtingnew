@@ -24,6 +24,15 @@ class Report extends CI_Controller {
 		$this->load->view('report/reportdebitur_pdf', $data);
 	}
 
+	public function reporthistory($id_debitur)
+	{
+		$this->load->library('Pdf');
+		$data['detaildebitur'] = $this->report_model->detaildebitur($id_debitur);
+		$data['historypembayaran'] = $this->report_model->historypembayaran_per_debitur($id_debitur);
+
+		$this->load->view('report/reportdetaildebitur_pdf',$data);
+	}
+
 }
 
 /* End of file Tester.php */

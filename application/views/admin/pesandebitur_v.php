@@ -46,7 +46,7 @@
                         </td>
                         <td class="mailbox-date"><?=date('d-M-Y',strtotime($pesan['tgl_terkirim']))?></td>
                         <td class="mailbox-time">
-                          <?=date('G:i:s',strtotime($pesan['waktu']))?>
+                          <?=date('G:i',strtotime($pesan['waktu']))?>
                         </td>
                      </tr>    
                     <?php endforeach ?>

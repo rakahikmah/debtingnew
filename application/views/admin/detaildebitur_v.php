@@ -158,7 +158,9 @@
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           </div>
         </div>
-        <div class="box-body" style="">
+
+        <div class="box-body">
+          <a href="<?=site_url("report/reporthistory/$fetch_data[id_debitur]")?>"><button class="btn btn-info">Cetak History Pembayaran</button></a>
           <div class="row">
             <div class="col-md-12">
               <div class="table table-responsive">
