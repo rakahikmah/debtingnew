@@ -37,7 +37,7 @@
                     <div class="form-group">
                       <label for="confirmpassword" class="col-md-2 control-label">Confirm Password</label>
                       <div class="col-md-10">
-                        <input type="passwordx" class="form-control" name="confirmpassword" placeholder="Confirm Password" required>
+                        <input type="password" class="form-control" name="confirmpassword" placeholder="Confirm Password" required>
                         <span class="text-danger"><?php echo form_error("confirmpassword"); ?></span>
                       </div>
                    </div>

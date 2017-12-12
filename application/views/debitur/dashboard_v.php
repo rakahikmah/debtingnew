@@ -1,8 +1,8 @@
 <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
-    
+   
     <!-- Main content -->
-    <section class="container content-isi">
+    <section class=" content container" style="padding: 163px 0px;">
      <div class="row">
         <!-- ./col -->
         <div class="col-md-4">

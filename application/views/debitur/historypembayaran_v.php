@@ -8,7 +8,7 @@
       </h1>
     </section>
     <!-- Main content -->
-    <section class="content container-fluid">
+    <section class="content container-fluid" style="padding: 150px 0px;>
       <div class="row">
         <div class="col-md-12">
           <div class="box">
