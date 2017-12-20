@@ -144,7 +144,7 @@
                     </div>
                   </div>
                 </div>
-                   <div class="col-sm-2 pull-right">
+                   <div class="col-md-3 pull-right">
                       <input type="submit" class="btn btn-primary" name="submit" value="Register">
                       <input type="reset" class="btn btn-danger" name="reset" value="Batal">
                     </div>

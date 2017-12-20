@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/AdminLTE.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/skins/skin-blue.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/datatables.net-bs/css/dataTables.bootstrap.min.css')?>">
-   <link rel="stylesheet" href="<?php echo base_url('assets/customs/home.css') ?>">
+   <link rel="stylesheet" href="<?php echo base_url('assets/customs/style.css') ?>">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <style>
