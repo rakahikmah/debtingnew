@@ -6,7 +6,7 @@ class Tester extends CI_Controller {
 
 	public function lunas()
 	{
-		$data['jumlahlunas'] = $this->tester_model->jumlahlunas();
+		$data['jumlahdebiturlunas'] = $this->admin_model->jumlahdebiturlunas();
 		$this->load->view('test', $data);
 	}
 
