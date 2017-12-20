@@ -66,6 +66,8 @@ a.login-btn{
 	background-color: #151618;
 	color: white;
 	background-size: cover;
+	position: relative;
+	padding-top: 20px;
 }
 a#tombol{
 	color:white;

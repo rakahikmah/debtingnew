@@ -48,7 +48,7 @@
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs"><?php echo $this->session->userdata('nama'); ?></span>
+              <?php echo $this->session->userdata('nama'); ?>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->

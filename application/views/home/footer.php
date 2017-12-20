@@ -14,11 +14,8 @@
 	      	</tr>
 	      </table>
   		</div>
-  		<div class="col-md-8">
-	   	  <h3 align="center">Lorem Ipsum</h3>
-	   	  <p align="justifiy">
-	   	  	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam animi saepe iste quas accusamus magnam, molestias voluptas suscipit! Id consequatur iste placeat aspernatur pariatur nisi doloremque quo tempore ipsa distinctio.
-	   	  </p>
+  		<div class="col-md-8"><br><br>
+	   	  <h3 align="center">&copy; Copyright 2017 by 1.4.J</h3>
   		</div>
 	</div>
 	</div>

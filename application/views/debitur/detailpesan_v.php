@@ -36,7 +36,7 @@
               </div>
               <br>
               <div class="row">
-                <div class="col-md-2 col-md-offset-10">
+                <div class="col-xs-2 col-xs-offset-9 col-md-2 col-md-offset-10">
                    <a href="<?=site_url("debitur/kirimpesan/")?>"  class="btn btn-primary"><span class="ion-reply"> </span>Balas Pesan</a> 
                 </div>
               </div>
