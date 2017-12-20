@@ -21,7 +21,7 @@
 <div class="container-fluid about-us">
 	<div class="row featurette">
 	   <div class="col-md-5">
-	      <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="https://i.pinimg.com/736x/dd/64/da/dd64da585bc57cb05e5fd4d8ce873f57--library-logo-kids-logo.jpg" data-holder-rendered="true">
+	      <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="debtinglogo" src="<?php echo base_url('assets/img/profile/debting.jpg') ?>" data-holder-rendered="true">
 	    </div>
 	     <div class="col-md-7 ">
 	      <h2 class="featurette-heading">About Debting</h2>
