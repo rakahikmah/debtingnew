@@ -20,6 +20,8 @@ class Admin extends CI_Controller {
 		$data['seluruhhargabarang']		= $this->admin_model->seluruhpiutang();
 		$data['terbayarhutang']			= $this->admin_model->terbayarhutang();
 		$data['jumlahpesan']			= $this->admin_model->jumlahpesan();
+		$data['jumlahdebiturlunas']		= $this->admin_model->jumlahdebiturlunas();
+
 
 		$this->load->view('layout/header');
 		$this->load->view('layout/aside',$data);
