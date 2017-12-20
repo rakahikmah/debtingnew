@@ -29,6 +29,17 @@ class Admin extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
+	public function datadebituryanglunas()
+	{
+
+		$data['jumlahpesan'] = $this->admin_model->jumlahpesan();
+		
+		$this->load->view('layout/header');
+		$this->load->view('layout/aside',$data);
+		$this->load->view('admin/datadebiturlunas_v');
+		$this->load->view('layout/footer');
+	}
+
 	public function datadebitur()
 	{
 		$data['fetch_data']				=$this->admin_model->fetch_data_debitur();
