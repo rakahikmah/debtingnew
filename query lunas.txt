@@ -1,0 +1,2 @@
+select pb.id_debitur,pb.id_debitur,sum(jumlah_bayar),total_hargabarang 
+from tb_pembayaran pb join tb_barang br on pb.id_barang=br.id_barang group by id_debitur
