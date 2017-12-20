@@ -33,7 +33,7 @@
                         <?php endif ?>  
                       >
                         <td class="mailbox-name"><a href="<?=site_url("debitur/detailpesan/$pesan[id_pesan]")?>"><?=$pesan['dari'];?></a></td>
-                        <td class="mailbox-subject"><b><?=$pesan['subjek'];?></b>,<?=word_limiter($pesan['isipesan'],3)?>
+                        <td class="mailbox-subject"><b><?=$pesan['subjek'];?></b>
                         </td>
                         <td class="mailbox-date"><?=date('d-M-Y',strtotime($pesan['tgl_kirim']))?></td>
                         <td class="mailbox-time">
