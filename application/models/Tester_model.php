@@ -29,6 +29,14 @@ class Tester_model extends CI_Model {
        $this->db->get('tb_pembayaran');
     }
 
+    public function view(){
+        return $this->db->get('tb_debitur')->result();
+    }
+
+     public function view_row(){
+        return $this->db->get('tb_debitur')->result();
+      }
+
 }
 
 /* End of file Tester_model.php */

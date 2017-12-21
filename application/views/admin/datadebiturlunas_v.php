@@ -37,14 +37,22 @@
                 <thead>
                 <tr>
                   <th>Id Debitur</th>
+                  <th>Nama Debitur</th>
                   <th>Id Barang</th>
                   <th>Nama Barang</th>
                   <th>Harga Barang</th>
-                  <th>Terbayar</th>
                 </tr>
                 </thead>
                 <tbody>
-                   
+                   <?php foreach ($debiturlunas as $dlunas): ?>
+                     <tr> 
+                        <td><?=$dlunas->id_debitur?></td>
+                        <td><?=$dlunas->nama?></td>
+                        <td><?=$dlunas->id_barang?></td>
+                        <td><?=$dlunas->nama_barang?></td>
+                        <td>Rp <?=number_format($dlunas->total_hargabarang)?></td>
+                     </tr>
+                   <?php endforeach ?>
                 </tbody>
               </table>
              </div>

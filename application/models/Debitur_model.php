@@ -27,7 +27,7 @@ class Debitur_model extends CI_Model {
 
     public function reset_password_debitur(){
         $data = array (
-            'password' => $this->input->post('password')
+            'password' => md5($this->input->post('password'))
         );
 
         $this->db->where('id_debitur',$this->session->userdata('id_debitur'));
@@ -131,7 +131,7 @@ class Debitur_model extends CI_Model {
    public function gantipassword()
    {
         $data = array (
-            'password'=>$this->input->post('passwordbaru'),
+            'password'=>md5($this->input->post('passwordbaru')),
         );
         $this->db->where('id_debitur',$this->session->userdata('id_debitur'));
         return $this->db->update('tb_debitur',$data);
