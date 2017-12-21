@@ -146,6 +146,14 @@ class Debitur_model extends CI_Model {
         return $query->row_array();
     }
 
+    public function detailbarangdebitur()
+    {
+        $this->db->select("*");
+        $this->db->from('tb_barang');
+        $this->db->where('id_debitur',$this->session->userdata('id_debitur'));
+        $query = $this->db->get();
+        return $query->row_array();
+    }
 
     public function jumlahpesan()
     {
