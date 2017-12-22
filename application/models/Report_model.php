@@ -48,8 +48,8 @@ class Report_model extends CI_Model {
     public function detailbarang($id_barang)
     {
         $this->db->select('*');
-        $this->db->from('tb_pembayaran');
-        $this->db->join('tb_barang','tb_barang.id_barang = tb_pembayaran.id_barang');
+        $this->db->from('tb_barang');
+        $this->db->where('id_barang',$id_barang);
         $query = $this->db->get();
         return $query->row_array();
     }

@@ -39,7 +39,8 @@ class Debitur extends CI_Controller {
 
 	public function uploadbukti(){
 		$config['upload_path'] = './assets/img/uploadbukti';
-		$config['allowed_types'] = 'gif|jpg|png';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
+		$config['max_size']		='9048000';
 		
 		$this->load->library('upload', $config);
 		

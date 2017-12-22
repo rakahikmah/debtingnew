@@ -61,7 +61,7 @@
                           <td class="col-md-3">
                             <a href="<?php echo base_url("admin/detaildebitur/$row->id_debitur") ?>" class="btn btn-info">Detail</a>
                             <a href="<?php echo base_url("admin/kirimpesan/$row->id_debitur") ?>" class="btn btn-success">Kirim Pesan</a>
-                            <a href="<?php echo base_url("admin/bayarangsuran/$row->id_debitur") ?>" class="btn btn-danger">Delete</a>
+                            <a href="<?php echo base_url("admin/deletedebitur/$row->id_debitur") ?>" class="btn btn-danger">Delete</a>
                           </td>
                         </tr>
                       <?php endforeach; ?>
