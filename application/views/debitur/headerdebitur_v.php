@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/AdminLTE.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/skins/skin-blue.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/datatables.net-bs/css/dataTables.bootstrap.min.css')?>">
-   <link rel="stylesheet" href="<?php echo base_url('assets/customs/home.css') ?>">
+   <link rel="stylesheet" href="<?php echo base_url('assets/customs/style.css') ?>">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body>
@@ -26,7 +26,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><img src="<?=base_url('assets/img/profile/debtingfix.png')?>" width="100" class="img-responsive" alt=""></a>
+      <a class="navbar-brand" href="#"><img src="<?=base_url('assets/img/profile/debtingfix-min.png')?>" width="100" class="img-responsive" alt=""></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
