@@ -27,6 +27,15 @@ class Admin_model extends CI_Model {
         return $query->num_rows();
     }
 
+    public function jumlahdebiturlunas()
+    {
+        $query = $this->db->query("SELECT pb.id_debitur,pb.id_debitur,SUM(jumlah_bayar),br.total_hargabarang 
+                          FROM tb_pembayaran pb JOIN tb_barang br ON pb.id_barang=br.id_barang 
+                          GROUP BY id_debitur HAVING sum(jumlah_bayar)=br.total_hargabarang
+                        ");
+        return $query->num_rows();
+    }
+
     public function sudahdibayardebitur($id_debitur){
         $this->db->select('SUM(jumlah_bayar) as total');
         $this->db->where('id_debitur',$id_debitur);
