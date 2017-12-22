@@ -34,12 +34,12 @@ class Login extends CI_Controller {
 		$password = $this->input->post('password');
 		$where = array(
 					'username'=>$username,
-					'password'=>$password
+					'password'=>md5($password)
 				);
 		$cek = $this->login_model->ceklogin('tb_debitur',$where)->num_rows();
 		if ($cek > 0) {
 			$result = $this->db->get_where('tb_debitur',$where)->row_array();
-			if ($result['no_telp'] == $result['password']) {
+			if (md5($result['no_telp']) == $result['password']) {
 				$data_session = array(
 								'username'=>$result['username'],
 								'id_debitur'=>$result['id_debitur'],

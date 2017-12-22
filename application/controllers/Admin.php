@@ -29,6 +29,18 @@ class Admin extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
+	public function datadebituryanglunas()
+	{
+
+		$data['jumlahpesan'] = $this->admin_model->jumlahpesan();
+		$data['debiturlunas'] = $this->admin_model->debiturlunas();
+
+		$this->load->view('layout/header');
+		$this->load->view('layout/aside',$data);
+		$this->load->view('admin/datadebiturlunas_v',$data);
+		$this->load->view('layout/footer');
+	}
+
 	public function datadebitur()
 	{
 		$data['fetch_data']				=$this->admin_model->fetch_data_debitur();
@@ -235,7 +247,7 @@ class Admin extends CI_Controller {
 				'id_debitur'=>$id_debitur
 			);
 		$result = $this->db->get_where('tb_debitur',$where)->row_array();
-		$this->admin_model->resetdebitur($id_debitur,$result['no_telp']);
+		$this->admin_model->resetdebitur($id_debitur,md5($result['no_telp']));
 		$this->session->set_flashdata('info',$result['nama']);
 		redirect('admin/resetdebitur');
 	}

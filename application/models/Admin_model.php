@@ -29,12 +29,23 @@ class Admin_model extends CI_Model {
 
     public function jumlahdebiturlunas()
     {
-        $query = $this->db->query("SELECT pb.id_debitur,pb.id_debitur,SUM(jumlah_bayar),br.total_hargabarang 
-                          FROM tb_pembayaran pb JOIN tb_barang br ON pb.id_barang=br.id_barang 
+        $query = $this->db->query("SELECT db.nama,pb.id_debitur,pb.id_debitur,SUM(jumlah_bayar),br.total_hargabarang 
+                          FROM tb_pembayaran pb JOIN tb_barang br ON pb.id_barang=br.id_barang JOIN
+                          tb_debitur db ON pb.id_debitur=db.id_debitur
                           GROUP BY id_debitur HAVING sum(jumlah_bayar)=br.total_hargabarang
                         ");
         return $query->num_rows();
     }
+
+    public function debiturlunas()
+    {
+        $query = $this->db->query("SELECT pb.id_debitur,db.nama,pb.id_barang,br.nama_barang,SUM(jumlah_bayar),br.total_hargabarang 
+                          FROM tb_pembayaran pb JOIN tb_barang br ON pb.id_barang=br.id_barang JOIN
+                          tb_debitur db ON pb.id_debitur=db.id_debitur
+                          GROUP BY id_debitur HAVING sum(jumlah_bayar)=br.total_hargabarang");
+        return $query->result();
+    }
+
 
     public function sudahdibayardebitur($id_debitur){
         $this->db->select('SUM(jumlah_bayar) as total');
@@ -58,11 +69,11 @@ class Admin_model extends CI_Model {
             $data = array(
                 "id_debitur"            =>$this->input->post("id_debitur"),
                 "username"              =>$this->input->post("username"),
-                "password"              =>$this->input->post("no_telp"),
+                "password"              =>md5($this->input->post("no_telp")),
                 "nama"                  =>$this->input->post("nama"),
                 "nik"                   =>$this->input->post("nik"),
                 "alamat"                =>$this->input->post("alamat"),
-                "no_telp"               =>$this->input->post("no_telp"),
+                "no_telp"               =>($this->input->post("no_telp")),
                 "email"                 =>$this->input->post("email"),
                 "pekerjaan"             =>$this->input->post("pekerjaan"),
                 "role"                  =>"debitur",
@@ -317,7 +328,7 @@ class Admin_model extends CI_Model {
    public function gantipassword()
    {
         $data = array (
-            'password'=>$this->input->post('passwordbaru'),
+            'password'=>md5($this->input->post('passwordbaru')),
         );
         $this->db->where('id_debitur',$this->session->userdata('id_debitur'));
         return $this->db->update('tb_debitur',$data);

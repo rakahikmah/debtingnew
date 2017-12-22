@@ -131,7 +131,7 @@ class Debitur extends CI_Controller {
 	{
 		$data['detaildebitur'] = $this->debitur_model->detaildebitur();
 		$data['jumlahpesan']   =$this->debitur_model->jumlahpesan();
-
+		$data['detailbarangdebitur'] = $this->debitur_model->detailbarangdebitur();
 		$this->load->view('debitur/headerdebitur_v',$data);
 		$this->load->view('debitur/detaildebitur_v',$data);
 		$this->load->view('home/footer');

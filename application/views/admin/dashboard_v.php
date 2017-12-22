@@ -42,9 +42,9 @@
             <div class="icon">
               RP
             </div>
-            <a href="" class="small-box-footer">
-              More info <i class="fa fa-arrow-circle-right"></i>
-            </a>
+            <div class="small-box-footer">
+             Jumlah Harga Barang
+            </div>
           </div>
         </div>
         
@@ -59,9 +59,9 @@
             <div class="icon">
               RP
             </div>
-            <a href="" class="small-box-footer">
-              More info <i class="fa fa-arrow-circle-right"></i>
-            </a>
+            <div class="small-box-footer">
+             Terbayar
+            </div>
           </div>
         </div>
         <!-- ./col -->
@@ -69,6 +69,23 @@
         <!-- ./col -->
       </div>
       <div class="row">
+
+        <div class="col-md-4">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>Rp <?=number_format($seluruhhargabarang-$terbayarhutang);?></h3>
+              <p>Belum Terbayar</p>
+            </div>
+            <div class="icon">
+              RP
+            </div>
+            <div class="small-box-footer">
+             Belum Terbayar
+            </div>
+          </div>
+        </div>
+
           <div class="col-md-4">
           <!-- small box -->
 
@@ -80,7 +97,7 @@
             <div class="icon">
               <i class="ion ion-checkmark-round"></i>
             </div>
-            <a href="" class="small-box-footer">
+            <a href="<?php echo site_url('admin/datadebituryanglunas') ?>" class="small-box-footer">
               More info <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>

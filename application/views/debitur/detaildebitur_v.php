@@ -61,6 +61,42 @@
           </div>
         </div>
       </div><br>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-5">
+            <b>Nama Barang</b>
+          </div>
+          <div class="col-md-7">
+            <?=$detailbarangdebitur['nama_barang']?>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-5">
+            <b>Harga Barang</b>
+          </div>
+          <div class="col-md-7">
+          <?=number_format($detailbarangdebitur['total_hargabarang'])?>
+          </div>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-5">
+            <b>Bayar Perangsur</b>
+          </div>
+          <div class="col-md-7">
+            <?=$detailbarangdebitur['bayar_perangsur']?>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-5">
+            <b>Angsuran Untuk</b>
+          </div>
+          <div class="col-md-7">
+          <?=$detailbarangdebitur['jumlah_angsuran']?> x
+          </div>
+        </div>
+      </div><br>
   </div>
 </div>
  
